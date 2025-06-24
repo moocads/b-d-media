@@ -5,17 +5,17 @@
   },
   "IndexPage": {
     "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
-    "title": "next-intl example"
+    "title": "B&D Media"
   },
   "LocaleLayout": {
-    "title": "next-intl example"
+    "title": "B&D Media"
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, en {English} zh_CN {简体中文} zh_TW {繁體中文} other {Unknown}}"
+    "locale": "{locale, select, en {English} zh_CN {简体中文} other {Unknown}}"
   },
   "Manifest": {
-    "name": "next-intl example"
+    "name": "B&D Media"
   },
   "Navigation": {
     "home": "Home",
@@ -45,6 +45,42 @@
   "PathnamesPage": {
     "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
     "title": "Pathnames"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Diverse Brand Communication Solutions",
+      "subtitle": "We help brands connect with their audience through strategic communication",
+      "cta": "Get Started"
+    },
+    "services": {
+      "title": "Our Services",
+      "viewMore": "View More",
+      "items": {
+        "brandStrategy": "Brand Strategy",
+        "digitalMarketing": "Digital Marketing",
+        "production": "Production"
+      }
+    },
+    "clients": {
+      "title": "Our Clients",
+      "description": "Trusted by leading brands across industries"
+    },
+    "industries": {
+      "title": "Industries We Serve",
+      "description": "We work with clients across various sectors including technology, finance, healthcare, retail, and more",
+      "items": [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Retail",
+        "Education",
+        "Entertainment"
+      ]
+    },
+    "news": {
+      "title": "Latest News",
+      "readMore": "Read More"
+    }
   },
   "AboutPage": {
     "title": "About Us",

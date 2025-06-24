@@ -1,5 +1,5 @@
 {
-  "name": "mooc-nextjs-template",
+  "name": "bd-media",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",

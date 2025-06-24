@@ -5,17 +5,17 @@
   },
   "IndexPage": {
     "description": "这是一个基本示例，演示了如何在Next.js App Router中使用<code>next-intl</code>。尝试更改右上角的语言，看看内容如何变化。",
-    "title": "next-intl示例"
+    "title": "B&D Media"
   },
   "LocaleLayout": {
-    "title": "next-intl示例"
+    "title": "B&D Media"
   },
   "LocaleSwitcher": {
     "label": "更改语言",
-    "locale": "{locale, select, en {English} zh_CN {简体中文} zh_TW {繁體中文} other {Unknown}}"
+    "locale": "{locale, select, en {English} zh_CN {简体中文} other {Unknown}}"
   },
   "Manifest": {
-    "name": "next-intl示例"
+    "name": "B&D Media"
   },
   "Navigation": {
     "home": "首页",
@@ -45,6 +45,42 @@
   "PathnamesPage": {
     "description": "<p>路径名也是国际化的。</p><p>如果您使用默认语言英语，您将在此页面的浏览器地址栏中看到<code>/en/pathnames</code>。</p><p>如果您将语言更改为德语，URL将相应本地化（<code>/de/pfadnamen</code>）。</p>",
     "title": "路径名"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "多元化品牌传播解决方案",
+      "subtitle": "我们帮助品牌通过战略传播与受众建立联系",
+      "cta": "立即开始"
+    },
+    "services": {
+      "title": "我们的服务",
+      "viewMore": "查看更多",
+      "items": {
+        "brandStrategy": "品牌战略",
+        "digitalMarketing": "数字营销",
+        "production": "制作"
+      }
+    },
+    "clients": {
+      "title": "我们的客户",
+      "description": "受到各行业领先品牌的信任"
+    },
+    "industries": {
+      "title": "我们服务的行业",
+      "description": "我们与各个领域的客户合作，包括技术、金融、医疗保健、零售等",
+      "items": [
+        "技术",
+        "金融",
+        "医疗保健",
+        "零售",
+        "教育",
+        "娱乐"
+      ]
+    },
+    "news": {
+      "title": "最新动态",
+      "readMore": "阅读更多"
+    }
   },
   "AboutPage": {
     "title": "关于我们",
