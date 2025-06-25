@@ -43,8 +43,8 @@ export async function getClients(): Promise<Client[]> {
  */
 export async function getNews(limit = 3): Promise<NewsArticle[]> {
   try {
-    const response = await strapi.find<NewsArticle>('articles', {
-      populate: ['coverImage'],
+    const response = await strapi.find<NewsArticle>('blogs', {
+      populate: ['image'],
       sort: ['publishedAt:desc'],
       pagination: {
         page: 1,

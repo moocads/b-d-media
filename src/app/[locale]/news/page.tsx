@@ -4,11 +4,11 @@ import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import { strapi } from '@/lib/strapi';
 
-// Define the type for a single blog post from Strapi
+// Define the type for a single post from Strapi
 interface Post {
   id: number;
   title: string;
-  excerpt: string;
+  summary: string;
   slug: string;
   createdAt: string;
   image?: {
@@ -33,11 +33,11 @@ async function getPosts(locale: string): Promise<Post[]> {
   }
 }
 
-export default async function BlogPage({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function NewsPage({ params: { locale } }: { params: { locale: Locale } }) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = await getTranslations('BlogPage');
+  const t = await getTranslations('NewsPage');
   const posts = await getPosts(locale);
 
   return (
@@ -67,9 +67,9 @@ export default async function BlogPage({ params: { locale } }: { params: { local
                       })}
                     </p>
                     <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-                    <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                    <p className="text-gray-600 mb-4">{post.summary}</p>
                     <Link
-                      href={`/${locale}/blog/${post.slug}`}
+                      href={`/${locale}/news/${post.slug}`}
                       className="text-blue-600 font-medium hover:underline"
                     >
                       {t('readMore')} →

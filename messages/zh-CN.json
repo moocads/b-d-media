@@ -21,7 +21,7 @@
     "home": "首页",
     "pathnames": "路径名",
     "about": "关于我们",
-    "blog": "博客",
+    "news": "新闻",
     "contact": "联系我们"
   },
   "NotFoundPage": {
@@ -100,13 +100,13 @@
       }
     }
   },
-  "BlogPage": {
-    "title": "博客",
+  "NewsPage": {
+    "title": "新闻",
     "latestPosts": "最新文章",
     "readMore": "阅读更多"
   },
-  "BlogDetail": {
-    "backToBlog": "返回博客"
+  "NewsDetail": {
+    "backToNews": "返回新闻"
   },
   "ContactPage": {
     "title": "联系我们",

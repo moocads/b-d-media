@@ -5,29 +5,25 @@ import HeroSection from '@/components/home/HeroSection';
 import ServicesSection from '@/components/home/ServicesSection';
 import ClientsSection from '@/components/home/ClientsSection';
 import NewsSection from '@/components/home/NewsSection';
-import { getClients, getNews, getServices } from '@/lib/api';
-// Keep mockData import as fallback
-import { mockClients, mockNews, mockServices } from '@/lib/mockData';
+import { getClients, getNews } from '@/lib/api';
+import { mockServices } from '@/lib/mockData';
 
-type Props = {
-  params: Promise<{ locale: Locale }>;
-};
-
-export default function IndexPage({ params }: Props) {
-  const { locale } = use(params);
-
+export default async function IndexPage({ params: { locale } }: { params: { locale: Locale } }) {
   // Enable static rendering
   setRequestLocale(locale);
   
   // Fetch data from Strapi API
-  const [clients, services, articles] = [mockClients, mockServices, mockNews]
+  const [clients, news] = await Promise.all([
+    getClients(),
+    getNews()
+  ]);
 
   return (
     <main>
       <HeroSection />
-      <ServicesSection services={services} />
+      <ServicesSection services={mockServices} />
       <ClientsSection clients={clients} />
-      <NewsSection articles={articles} />
+      <NewsSection newsArticles={news} />
     </main>
   );
 }

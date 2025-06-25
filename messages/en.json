@@ -21,7 +21,7 @@
     "home": "Home",
     "pathnames": "Pathnames",
     "about": "About",
-    "blog": "Blog",
+    "news": "News",
     "contact": "Contact"
   },
   "NotFoundPage": {
@@ -100,13 +100,13 @@
       }
     }
   },
-  "BlogPage": {
-    "title": "Blog",
+  "NewsPage": {
+    "title": "News",
     "latestPosts": "Latest Posts",
     "readMore": "Read More"
   },
-  "BlogDetail": {
-    "backToBlog": "Back to Blog"
+  "NewsDetail": {
+    "backToNews": "Back to News"
   },
   "ContactPage": {
     "title": "Contact Us",

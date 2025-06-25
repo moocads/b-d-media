@@ -22,15 +22,13 @@ export interface StrapiPagination {
 }
 
 export interface StrapiImage {
-  data: {
     id: number;
-    attributes: {
-      name: string;
-      alternativeText: string;
-      caption?: string | null;
-      width: number;
-      height: number;
-      formats: {
+    name: string;
+    alternativeText: string;
+    caption?: string | null;
+    width: number;
+    height: number;
+    formats: {
         thumbnail: {
           url: string;
         };
@@ -45,8 +43,6 @@ export interface StrapiImage {
         };
       };
       url: string;
-    } & StrapiSystemFields;
-  };
 }
 
 export interface Client {
@@ -67,7 +63,7 @@ export interface NewsArticle {
   publishedAt: string;
   createdAt: string;
   updatedAt: string;
-  coverImage: StrapiImage;
+  image: StrapiImage;
 }
 
 export interface Service {

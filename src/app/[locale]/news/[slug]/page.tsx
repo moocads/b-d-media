@@ -5,11 +5,11 @@ import { notFound } from 'next/navigation';
 import PageLayout from '@/components/PageLayout';
 import { strapi } from '@/lib/strapi';
 
-// Define the type for a single blog post from Strapi
+// Define the type for a single post from Strapi
 interface Post {
   id: number;
   title: string;
-  excerpt: string;
+  summary: string;
   content: string;
   slug: string;
   createdAt: string;
@@ -48,11 +48,11 @@ interface Props {
   };
 }
 
-export default async function BlogDetailPage({ params: { locale, slug } }: Props) {
+export default async function NewsDetailPage({ params: { locale, slug } }: Props) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = await getTranslations('BlogDetail');
+  const t = await getTranslations('NewsDetail');
   const post = await getPostBySlug(slug, locale);
 
   // If post not found, show 404
@@ -72,10 +72,10 @@ export default async function BlogDetailPage({ params: { locale, slug } }: Props
       <article className="max-w-3xl mx-auto">
         {/* Back button */}
         <Link 
-          href={`/${locale}/blog`}
+          href={`/${locale}/news`}
           className="inline-flex items-center mb-8 text-blue-600 hover:underline"
         >
-          ← {t('backToBlog')}
+          ← {t('backToNews')}
         </Link>
 
         {/* Post header */}
@@ -95,9 +95,9 @@ export default async function BlogDetailPage({ params: { locale, slug } }: Props
           </div>
         )}
 
-        {/* Post excerpt as lead-in */}
+        {/* Post summary as lead-in */}
         <div className="text-xl font-medium mb-6 text-gray-700">
-          {post.excerpt}
+          {post.summary}
         </div>
 
         {/* Post content */}

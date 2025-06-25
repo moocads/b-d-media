@@ -7,6 +7,15 @@ const withNextIntl = createNextIntlPlugin({
   }
 });
 
-const config: NextConfig = {};
+const config: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'bd-media-cms-mooc.s3.ca-central-1.amazonaws.com',
+      },
+    ],
+  },
+};
 
 export default withNextIntl(config);
