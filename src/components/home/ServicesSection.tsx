@@ -62,7 +62,7 @@ export default function ServicesSection({ services = [] }: ServicesSectionProps)
     ? services.map(service => ({
         id: service.id,
         title: service.title,
-        imageUrl: service.icon.data?.attributes.url || '/images/placeholder.jpg',
+        imageUrl: service.icon?.url || '/images/placeholder.jpg',
         alt: service.title
       }))
     : fallbackServices;
