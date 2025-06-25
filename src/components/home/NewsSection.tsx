@@ -14,7 +14,7 @@ function NewsCard({news}: {news: NewsArticle}) {
     <div className="overflow-hidden rounded-lg bg-white shadow-md">
       <div className="relative h-48 w-full">
         <Image
-          src={news.image.url}
+          src={news.image?.url}
           alt={news.title}
           fill
           className="object-cover"

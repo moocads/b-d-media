@@ -1,5 +1,6 @@
 import { strapi } from './strapi';
 import type { Client, NewsArticle, Service, StrapiResponse, StrapiSystemFields } from '../types/strapi';
+import { Locale } from 'next-intl';
 
 // Define the structure of Strapi data items
 interface StrapiDataItem<T> {
@@ -23,11 +24,12 @@ interface StrapiApiResponse<T> {
 /**
  * Fetch clients from Strapi CMS
  */
-export async function getClients(): Promise<Client[]> {
+export async function getClients(locale: Locale): Promise<Client[]> {
   try {
     const response = await strapi.find<Client>('clients', {
       populate: ['logo'],
-      sort: ['name:asc']
+      sort: ['name:asc'],
+      locale: locale as any,
     });
     
     // Map the response to our Client type
@@ -41,7 +43,7 @@ export async function getClients(): Promise<Client[]> {
 /**
  * Fetch news articles from Strapi CMS
  */
-export async function getNews(limit = 3): Promise<NewsArticle[]> {
+export async function getNews(locale: Locale, limit = 3): Promise<NewsArticle[]> {
   try {
     const response = await strapi.find<NewsArticle>('blogs', {
       populate: ['image'],
@@ -49,29 +51,13 @@ export async function getNews(limit = 3): Promise<NewsArticle[]> {
       pagination: {
         page: 1,
         pageSize: limit
-      }
+      },
+      locale: locale as any,
     });
     
     return response.data;
   } catch (error) {
     console.error('Error fetching news:', error);
-    return [];
-  }
-}
-
-/**
- * Fetch services from Strapi CMS
- */
-export async function getServices(): Promise<Service[]> {
-  try {
-    const response = await strapi.find<Service>('services', {
-      populate: ['icon'],
-      sort: ['id:asc']
-    });
-    
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching services:', error);
     return [];
   }
 }

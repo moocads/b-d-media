@@ -25,7 +25,6 @@ async function getPosts(locale: string): Promise<Post[]> {
       locale: locale as any,
       sort: 'createdAt:desc',
     });
-    console.log(response)
     return response.data as Post[];
   } catch (error) {
     console.error('Error fetching posts from Strapi:', error);

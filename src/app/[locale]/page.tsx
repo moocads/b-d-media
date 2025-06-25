@@ -8,14 +8,15 @@ import NewsSection from '@/components/home/NewsSection';
 import { getClients, getNews } from '@/lib/api';
 import { mockServices } from '@/lib/mockData';
 
-export default async function IndexPage({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function IndexPage({ params }: { params: { locale: Locale } }) {
+  const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);
   
   // Fetch data from Strapi API
   const [clients, news] = await Promise.all([
-    getClients(),
-    getNews()
+    getClients(locale),
+    getNews(locale)
   ]);
 
   return (

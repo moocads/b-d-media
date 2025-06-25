@@ -23,14 +23,13 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
         </div>
 
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
-          {clients.length > 0 ? (
-            clients.map((client) => (
+          {clients.map((client) => (
               <div
                 key={client.id}
                 className="flex items-center justify-center rounded-lg bg-white p-4"
               >
                 <Image
-                  src={client.logo.data.attributes.url}
+                  src={client.logo?.url}
                   alt={client.name}
                   width={120}
                   height={80}
@@ -38,17 +37,7 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
                 />
               </div>
             ))
-          ) : (
-            // Fallback placeholders if no clients from API
-            Array.from({ length: 10 }).map((_, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center rounded-lg bg-white p-4"
-              >
-                <div className="h-12 w-24 animate-pulse bg-gray-200"></div>
-              </div>
-            ))
-          )}
+          }
         </div>
       </div>
     </section>
