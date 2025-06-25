@@ -8,7 +8,7 @@ import NewsSection from '@/components/home/NewsSection';
 import { getClients, getNews } from '@/lib/api';
 import { mockServices } from '@/lib/mockData';
 
-export default async function IndexPage({ params }: { params: { locale: Locale } }) {
+export default async function IndexPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);

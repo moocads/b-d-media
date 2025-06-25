@@ -4,24 +4,12 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageLayout from '@/components/PageLayout';
 import { strapi } from '@/lib/strapi';
-
-// Define the type for a single post from Strapi
-interface Post {
-  id: number;
-  title: string;
-  summary: string;
-  content: string;
-  slug: string;
-  createdAt: string;
-  image?: {
-    url: string;
-  };
-}
+import type { NewsArticle } from '@/types/strapi';
 
 // Function to fetch a single post from Strapi by slug
-async function getPostBySlug(slug: string, locale: string): Promise<Post | null> {
+async function getPostBySlug(slug: string, locale: Locale): Promise<NewsArticle | null> {
   try {
-    const response = await strapi.find('blogs', {
+    const response = await strapi.find<NewsArticle>('blogs', {
       filters: {
         slug: {
           $eq: slug,
@@ -30,9 +18,9 @@ async function getPostBySlug(slug: string, locale: string): Promise<Post | null>
       populate: '*',
       locale: locale as any,
     });
-    
+
     if (response.data && response.data.length > 0) {
-      return response.data[0] as Post;
+      return response.data[0];
     }
     return null;
   } catch (error) {
@@ -41,14 +29,8 @@ async function getPostBySlug(slug: string, locale: string): Promise<Post | null>
   }
 }
 
-interface Props {
-  params: {
-    locale: Locale;
-    slug: string;
-  };
-}
-
-export default async function NewsDetailPage({ params: { locale, slug } }: Props) {
+export default async function NewsDetailPage({ params }: { params: Promise<{ locale: Locale; slug: string }> }) {
+  const { locale, slug } = await params;
   // Enable static rendering
   setRequestLocale(locale);
 
@@ -71,7 +53,7 @@ export default async function NewsDetailPage({ params: { locale, slug } }: Props
     <PageLayout title={post.title}>
       <article className="max-w-3xl mx-auto">
         {/* Back button */}
-        <Link 
+        <Link
           href={`/${locale}/news`}
           className="inline-flex items-center mb-8 text-blue-600 hover:underline"
         >
@@ -85,9 +67,9 @@ export default async function NewsDetailPage({ params: { locale, slug } }: Props
         </header>
 
         {/* Featured image */}
-        {post.image?.url && (
+        {post.image && (
           <div className="mb-8">
-            <img 
+            <img
               src={post.image.url}
               alt={post.title}
               className="w-full h-auto rounded-lg"
@@ -101,7 +83,7 @@ export default async function NewsDetailPage({ params: { locale, slug } }: Props
         </div>
 
         {/* Post content */}
-        <div 
+        <div
           className="prose prose-lg max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />

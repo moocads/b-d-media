@@ -3,11 +3,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import PageLayout from '@/components/PageLayout';
 import ContactForm from '@/components/ContactForm';
 
-type Props = {
-  params: { locale: Locale };
-};
-
-export default async function ContactPage({ params: { locale } }: Props) {
+export default async function ContactPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);
 

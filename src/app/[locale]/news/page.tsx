@@ -32,7 +32,8 @@ async function getPosts(locale: string): Promise<Post[]> {
   }
 }
 
-export default async function NewsPage({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function NewsPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);
 
