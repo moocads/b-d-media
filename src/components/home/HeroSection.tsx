@@ -5,24 +5,28 @@ export default function HeroSection() {
   const t = useTranslations('HomePage.hero');
 
   return (
-    <section className="relative min-h-[500px] w-full bg-gradient-to-b from-yellow-100 to-yellow-300 py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl">
-          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            {t('title')}
-          </h1>
-          <Link
-            href="/contact"
-            className="inline-block rounded-full bg-white px-8 py-3 font-medium text-gray-800 shadow-md transition hover:bg-gray-100"
-          >
-            {t('cta')}
-          </Link>
-        </div>
+ <section className="relative h-[80vh] bg-cover bg-center" style={{ backgroundImage: 'url(/your-banner.jpg)' }}>
+  <div className="absolute inset-0 bg-black/40" />
+  <div className="relative z-10 h-full flex items-end">
+    <div className="container mx-auto px-4">
+      <div className="max-w-3xl pb-16">
+        <h1 className="text-4xl text-white font-bold leading-tight md:text-5xl lg:text-6xl">
+          {t('title')}
+        </h1>
+        <br />
+        <Link
+          href="/contact"
+          className="inline-block rounded-full bg-white px-8 py-3 font-medium text-gray-800 shadow-md transition hover:bg-gray-100"
+        >
+          {t('cta')}
+        </Link>
       </div>
+    </div>
+  </div>
       {/* Background image elements - semi-transparent lemon slices */}
-      <div className="absolute inset-0 -z-10 overflow-hidden opacity-70">
-        <div className="absolute -right-20 -top-20 h-[400px] w-[400px] rounded-full bg-yellow-200"></div>
-        <div className="absolute -bottom-40 -left-20 h-[300px] w-[300px] rounded-full bg-yellow-200"></div>
+      <div className="absolute inset-0 -z-10 overflow-hidden opacity-100 ">
+          {/* <img src="/images/lemon-bg.jpg" alt="hero-bg-1" className="w-full h-full object-cover" /> */}
+          <video src="/videos/hotel-demo.mp4" autoPlay loop muted className="w-full h-full object-cover" />
       </div>
     </section>
   );

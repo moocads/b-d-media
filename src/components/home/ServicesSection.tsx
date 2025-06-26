@@ -11,8 +11,8 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, imageUrl, alt }: ServiceCardProps) {
   return (
-    <div className="overflow-hidden rounded-lg bg-white shadow-lg">
-      <div className="relative h-48 w-full">
+    <div className="overflow-hidden rounded-tr-[30px] bg-white">
+      <div className="relative h-64 w-full">
         <Image
           src={imageUrl}
           alt={alt}
@@ -70,11 +70,24 @@ export default function ServicesSection({ services = [] }: ServicesSectionProps)
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <div className="mb-12">
-          <h2 className="mb-2 text-3xl font-bold uppercase">
+        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="col-span-2">
+              <p className="text-gray-700 text-lg">
+            what we provide
+          </p>
+          <h2 className="mb-2 text-3xl md:text-6xl font-black uppercase text-black">
             {t('title')}
           </h2>
-          <div className="h-1 w-20 bg-yellow-400"></div>
+          </div>
+          <div className="col-span-1">
+            <p className="text-gray-700 text-md">
+            When establishing seamless connections between brands and consumers, we always support it with effective communication.
+          </p>
+          <br />
+          <Link href="/contact" className="bg-black rounded-full px-4 py-2 text-white text-sm mt-2">
+            Learn More
+          </Link>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
