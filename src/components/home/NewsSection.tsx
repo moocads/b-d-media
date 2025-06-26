@@ -11,8 +11,8 @@ function NewsCard({news}: {news: NewsArticle}) {
   });
 
   return (
-    <div className="overflow-hidden rounded-lg bg-white">
-      <div className="relative h-64 rounded-tr-[30px] w-full">
+    <div className="overflow-hidden rounded-tr-[30px] bg-white">
+      <div className="relative h-64  w-full">
         <Image
           src={news.image?.url}
           alt={news.title}
@@ -37,7 +37,7 @@ export default function NewsSection({ newsArticles = [] }: { newsArticles: NewsA
   const t = useTranslations('HomePage.news');
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-4">
           <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="col-span-2">

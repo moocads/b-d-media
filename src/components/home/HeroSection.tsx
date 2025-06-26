@@ -26,7 +26,7 @@ export default function HeroSection() {
       {/* Background image elements - semi-transparent lemon slices */}
       <div className="absolute inset-0 -z-10 overflow-hidden opacity-100 ">
           {/* <img src="/images/lemon-bg.jpg" alt="hero-bg-1" className="w-full h-full object-cover" /> */}
-          <video src="/videos/hotel-demo.mp4" autoPlay loop muted className="w-full h-full object-cover" />
+          <video src="/videos/hotel-demo.mp4" autoPlay loop muted className="w-full h-full object-cover" poster="/images/hero-video-poster.png"/>
       </div>
     </section>
   );

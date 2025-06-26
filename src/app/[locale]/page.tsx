@@ -3,6 +3,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
 import HeroSection from '@/components/home/HeroSection';
 import ServicesSection from '@/components/home/ServicesSection';
+import Connecting from '@/components/home/Connecting';
+import VideoDivider from '@/components/home/VideoDivider';
 import ClientsSection from '@/components/home/ClientsSection';
 import NewsSection from '@/components/home/NewsSection';
 import { getClients, getNews } from '@/lib/api';
@@ -24,6 +26,8 @@ export default async function IndexPage({ params }: { params: Promise<{ locale: 
       <HeroSection />
       <ServicesSection services={mockServices} />
       <ClientsSection clients={clients} />
+      <Connecting />
+      <VideoDivider />
       <NewsSection newsArticles={news} />
     </main>
   );

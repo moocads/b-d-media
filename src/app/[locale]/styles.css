@@ -58,3 +58,25 @@ body {
     max-width: 90rem;
   }
 }
+
+
+@keyframes arc-move {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(50vw, -120px);
+  }
+  100% {
+    transform: translate(100vw, 0);
+    opacity: 1;
+  }
+}
+
+.animate-arc-move {
+  animation: arc-move 7s linear infinite;
+}
