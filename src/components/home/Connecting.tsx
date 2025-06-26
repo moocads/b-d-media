@@ -55,7 +55,7 @@ export default function Connecting() {
   <img
     src="/images/sun.png"
     alt="motion circle"
-    className="absolute md:w-[550px] md:h-[550px] w-20 h-20 animate-arc-move z-0 pointer-events-none md:top-[50%] top-[100%] left-0"
+    className="absolute md:w-[550px] md:h-[550px] w-20 h-20 animate-arc-move z-0 pointer-events-none md:top-[50%] top-[100%] left-0 mix-blend-multiply"
 
   />
 
