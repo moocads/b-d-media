@@ -22,7 +22,8 @@
     "pathnames": "Pathnames",
     "about": "About",
     "news": "News",
-    "contact": "Get in Touch"
+    "contact": "Get in Touch",
+    "works": "Works"
   },
   "NotFoundPage": {
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
@@ -132,6 +133,42 @@
       "address": {
         "title": "Address",
         "value": "123 Main Street, City, Country"
+      },
+      "email": {
+        "title": "Email",
+        "value": "contact@example.com"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "+1 (555) 123-4567"
+      }
+    }
+  },
+  "Footer": {
+    "title": "Footer",
+    "description": "Founded in 2004, B&D Media is a global creative agency based in Toronto and Beijing, specializing in strategy, storytelling, and integrated marketing.",
+    "copyright": "© 2025 B&D Media. All rights reserved.",
+    "footerLogoLink": "/images/logo-white-en.png",
+    "links": {
+      "home": "Home",
+      "about": "About B&D Media",
+      "services": "Services",
+      "work": "Our Works",
+      "contact": "Contact Us"
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "address": {
+        "location1": {
+          "country": "Canada",
+          "city": "Toronto Office",
+          "address": "123 Main Street, Toronro, Canada"
+        },
+        "location2": {
+          "country": "China",
+          "city": "Beijing Office",
+          "address": "123 Main Street, Beijing, China"
+        }
       },
       "email": {
         "title": "Email",

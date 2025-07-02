@@ -11,7 +11,7 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
   const t = useTranslations('HomePage.clients');
 
   return (
-    <section className="py-[150px] text-white bg-[url('/images/client-section-bg.jpg')] bg-cover bg-center">
+    <section className="py-[150px] text-white bg-[url('/images/client-section-bg.jpg')] bg-cover bg-no-repeat bg-fixed bg-center">
       <div className="container mx-auto px-4">
             <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="col-span-1">

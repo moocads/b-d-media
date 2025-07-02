@@ -20,18 +20,6 @@ export default function PageLayout({children, title}: Props) {
           {title}
         </h1>
         <div className="mt-6 text-gray-400 md:text-lg">{children}</div>
-        <div className="mt-auto grid grid-cols-1 gap-4 pt-20 md:grid-cols-2 lg:gap-12">
-          <ExternalLink
-            description={t('links.docs.description')}
-            href={t('links.docs.href')}
-            title={t('links.docs.title')}
-          />
-          <ExternalLink
-            description={t('links.source.description')}
-            href={t('links.source.href')}
-            title={t('links.source.title')}
-          />
-        </div>
       </div>
     </div>
   );

@@ -22,7 +22,8 @@
     "pathnames": "路径名",
     "about": "关于我们",
     "news": "新闻",
-    "contact": "联系我们"
+    "contact": "联系我们",
+    "works": "案例"
   },
   "NotFoundPage": {
     "description": "请检查浏览器地址栏或使用导航前往已知页面。",
@@ -132,6 +133,42 @@
       "address": {
         "title": "地址",
         "value": "中国北京市朝阳区123号"
+      },
+      "email": {
+        "title": "电子邮件",
+        "value": "contact@example.com"
+      },
+      "phone": {
+        "title": "电话",
+        "value": "+86 10 1234 5678"
+      }
+    }
+  },
+  "Footer": {
+    "title": "Footer",
+    "description": "B&D Media 成立于2023年，是一家专注于影响力品牌传播的创意代理机构。我们结合策略、叙事和科技，帮助品牌通过视频制作、数字内容和整合营销与受众建立联系。",
+    "copyright": "© 2025 B&D Media. 版权所有。",
+    "footerLogoLink": "/images/logo.png",
+    "links": {
+      "home": "首页",
+      "about": "关于我们",
+      "services": "服务",
+      "work": "我们的作品",
+      "contact": "联系我们"
+    },
+    "contactInfo": {
+      "title": "联系信息",
+      "address": {
+        "location1": {
+          "country": "加拿大",
+          "city": "多伦多",
+          "address": "123 Main Street, 多伦多, 加拿大"
+        },
+        "location2": {
+          "country": "中国",
+          "city": "北京",
+          "address": "123 长安大道, 北京, 中国"
+        }
       },
       "email": {
         "title": "电子邮件",

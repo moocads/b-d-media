@@ -7,6 +7,7 @@ import {Inter} from 'next/font/google';
 import {routing} from '@/i18n/routing';
 import Navigation from '@/components/Navigation';
 import './styles.css';
+import Footer from '@/components/Footer';
 
 type Props = {
   children: ReactNode;
@@ -46,6 +47,7 @@ export default async function LocaleLayout({children, params}: Props) {
           <Navigation />
           {children}
         </NextIntlClientProvider>
+        <Footer />
       </body>
     </html>
   );
