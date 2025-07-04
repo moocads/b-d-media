@@ -1,6 +1,9 @@
 {
   "name": "bd-media",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev --turbo",
     "lint": "eslint src && tsc && prettier src --check",

@@ -18,7 +18,7 @@ export default function AboutPage({params}: Props) {
   return (
     <>
       <PageLayout title={t('title') || 'About Us'}>
-        <h4 className="text-xl text-black font-bold mt-[20px]">{t('subtitle') || 'About Us'}</h4>
+        <h4 className="text-xl text-black font-bold mt-[20px]">{t('subtitle')}</h4>
         <div className="max-w-3xl mx-auto mt-[100px]">
           <div className="mb-8">
             <p className="mb-4 font-light text-black">
