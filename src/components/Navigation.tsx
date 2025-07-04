@@ -57,7 +57,7 @@ export default function Navigation() {
           <NavigationLink href="/" className="px-4 hover:text-gray-300 transition-colors duration-200">{t('home')}</NavigationLink>
           <NavigationLink href="/about" className="px-4 hover:text-gray-300 transition-colors duration-200">{t('about')}</NavigationLink>
           <NavigationLink href="/news" className="px-4 hover:text-gray-300 transition-colors duration-200">{t('news')}</NavigationLink>
-          <NavigationLink href="/works" className="px-4 hover:text-gray-300 transition-colors duration-200">{t('works')}</NavigationLink>
+          <NavigationLink href="/Works" className="px-4 hover:text-gray-300 transition-colors duration-200">{t('works')}</NavigationLink>
           <NavigationLink href="/contact" className="px-4 hover:text-gray-100 transition-colors duration-200 bg-white text-black rounded-full py-2 px-4 font-bold">{t('contact')}</NavigationLink>
           <LocaleSwitcher />
         </div>
