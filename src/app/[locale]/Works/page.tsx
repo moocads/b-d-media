@@ -38,7 +38,7 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
               playsInline
             >
               <source src="/videos/hotel-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              Your browser does not support the video tag..
             </video>
             
             {/* Content overlay */}
