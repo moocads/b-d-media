@@ -1,8 +1,15 @@
+import{ Locale } from 'next-intl';
 import PageLayout from "@/components/PageLayout";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import Link from 'next/link';
+import {strapi} from '@/lib/strapi';
 
-export default async function WorksPage() {
+export default async function WorksPage({params}: {params: Promise<{locale: Locale}>}) {
+  const {locale} = await params;
+  setRequestLocale(locale);
   const t = await getTranslations('WorksPage');
+  
+
   return (
     <PageLayout title="Works">
 <div id="worksPage" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-5 ">
