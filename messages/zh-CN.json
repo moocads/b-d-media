@@ -133,6 +133,15 @@
   "NewsDetail": {
     "backToNews": "返回新闻"
   },
+  "WorksPage": {
+    "title": "B&D Media案例",
+    "subtitle": "用故事重塑品牌表达，数据驱动的传播革新",
+    "description_01": "我们与来自科技、金融、快消、奢侈品、医疗健康等多个行业的领先品牌携手，助力品牌跨越文化边界，打造深入人心的传播体验。从战略规划到创意执行，每一个案例都体现了B&D Media对\"信息见效\"理念的坚持。",
+    "description_02": "无论是国际品牌的本地化深耕，还是本土品牌的全球化拓展，我们凭借丰富的跨行业经验、多元文化视角与数据驱动思维，为不同领域的合作伙伴持续交付可衡量的商业价值。"
+  },
+  "WorksDetail": {
+    "backToWorks": "返回作品"
+  },
   "ContactPage": {
     "title": "联系我们",
     "getInTouch": "联系我们",
@@ -170,6 +179,7 @@
     "copyright": "© 2025 B&D Media. 版权所有。",
     "footerLogoLink": "/images/logo-white-en.png",
     "links": {
+      "title":"站内链接",
       "home": "首页",
       "about": "关于我们",
       "services": "服务",
@@ -177,7 +187,7 @@
       "contact": "联系我们"
     },
     "contactInfo": {
-      "title": "联系信息",
+      "title": "联系方式",
       "address": {
         "location1": {
           "country": "加拿大",

@@ -136,10 +136,7 @@ export default function ContactForm({ translations }: ContactFormProps) {
       </div>
 
       <button
-        type="submit"
-        className={`bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-        disabled={isSubmitting}
-      >
+        type="submit" className="bg-black rounded-full px-4 py-2 text-white text-sm mt-2" disabled={isSubmitting} >
         {isSubmitting ? 'Sending...' : translations.submit}
       </button>
     </form>

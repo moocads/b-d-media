@@ -18,18 +18,22 @@ export default function AboutPage({params}: Props) {
   return (
     <>
       <PageLayout title={t('title') || 'About Us'}>
-        <h4 className="text-xl text-black font-bold mt-[20px]">{t('subtitle')}</h4>
+       <h1 className="text-3xl font-semibold text-black md:text-5xl fade-in-left">
+    {t('title')}
+        </h1>
+        <h4 className="text-xl text-black font-normal mt-[20px] fade-in-left-delayed">{t('subtitle')}</h4>
         <div className="max-w-3xl mx-auto mt-[100px]">
-          <div className="mb-8">
+          <div className="mb-8 fade-in-up">
             <p className="mb-4 font-light text-black">
               {t('ourStory.description') || 
               'Founded in [YEAR], we have been dedicated to [MISSION]. Our journey began with a simple idea: [IDEA], and has since evolved into [CURRENT STATE].'}
             </p>
           </div>
-          
-          <div className="mb-8">
+          <br />
+          <br />
+          <div className="mb-8 fade-in-up">
             <h2 className="text-2xl text-black font-bold mb-4">{t('mission.title') || 'Our Mission'}</h2>
-            <p className="mb-4 font-light text-black">
+            <p className="mb-4 font-light text-black ">
               {t('mission.description') || 
               'In the era of information overload, mere exposure is no longer enough. We believe that content that resonates with consumers on an emotional level is the key to lasting brand impact. Therefore, we focus not only on the reach of our messages but also on their depth—ensuring that every piece of information hits its target audience with measurable business value.'}
             </p>

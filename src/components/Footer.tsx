@@ -15,7 +15,7 @@ export default function Footer() {
             <p className="text-white text-sm">{t("description")}</p>
           </div>
           <div>
-            <h3 className="text-white font-bold">LINKS</h3>
+            <h3 className="text-white font-bold">{t("links.title")}</h3>
             <ul>
               <li><Link className="text-white font-light" href="/about">{t("links.about")}</Link></li>
               <li><Link className="text-white font-light" href="/services">{t("links.services")}</Link></li>
@@ -23,7 +23,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-bold">CONTACT</h3>
+            <h3 className="text-white font-bold">{t("contactInfo.title")}</h3>
             <p className="text-white text-sm">{t("contactInfo.email.title")}: {t("contactInfo.email.value")}</p>
             <p className="text-white text-sm">{t("contactInfo.phone.title")}: {t("contactInfo.phone.value")}</p>
             <br />

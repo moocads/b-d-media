@@ -131,6 +131,15 @@
   "NewsDetail": {
     "backToNews": "Back to News"
   },
+  "WorksPage": {
+    "title": "B&D Media Case",
+    "subtitle": "Storytelling, Data-driven Communication",
+    "description_01": "We partner with leading brands from technology, finance, fast-moving consumer goods, luxury goods, and healthcare industries to help them break through cultural boundaries and create meaningful communication experiences. From strategic planning to creative execution, each case reflects our commitment to the \"information-effective\" concept.",
+    "description_02": "Whether it's international brand localization or domestic brand globalization, we leverage our cross-industry experience, multicultural perspective, and data-driven approach to deliver measurable business value to our partners."
+  },
+  "WorksDetail": {
+    "backToWorks": "Back to Works"
+  },
   "ContactPage": {
     "title": "Contact Us",
     "getInTouch": "Get in Touch",
@@ -168,6 +177,7 @@
     "copyright": "© 2025 B&D Media. All rights reserved.",
     "footerLogoLink": "/images/logo-white-en.png",
     "links": {
+      "title":"Links",
       "home": "Home",
       "about": "About B&D Media",
       "services": "Services",
@@ -175,7 +185,7 @@
       "contact": "Contact Us"
     },
     "contactInfo": {
-      "title": "Contact Information",
+      "title": "Contact",
       "address": {
         "location1": {
           "country": "Canada",
