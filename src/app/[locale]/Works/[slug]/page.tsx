@@ -8,5 +8,9 @@ import { strapi } from '@/lib/strapi';
 
 export default async function WorksDetailPage({ params }: { params: Promise<{ locale: Locale; slug: string }> }) {
   const { locale, slug } = await params;
-  return <div>WorksDetailPage</div>;
+  return(
+    <PageLayout title="Works">
+      <div>WorksDetailPage</div>
+    </PageLayout>
+  );
 }
