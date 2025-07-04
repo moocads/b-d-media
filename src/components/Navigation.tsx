@@ -3,6 +3,7 @@
 import {useTranslations} from 'next-intl';
 import {useEffect, useState} from 'react';
 import {usePathname} from 'next/navigation';
+import Link from 'next/link';
 import LocaleSwitcher from './LocaleSwitcher';
 import NavigationLink from './NavigationLink';
 
@@ -51,7 +52,9 @@ export default function Navigation() {
     <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getBackgroundClass()}`}>
       <nav className="container flex justify-between p-2 text-white items-center">
         <div className="flex-shrink-0">
-          <img src="/images/logo-white-en.png" alt="logo" width={200} height={100} />
+          <Link href="/">
+            <img src="/images/logo-white-en.png" alt="logo" width={200} height={100} />
+          </Link>
         </div>
         <div className="hidden md:flex text-white gap-6 items-center">
           <NavigationLink href="/" className="px-4 hover:text-gray-300 transition-colors duration-200">{t('home')}</NavigationLink>
