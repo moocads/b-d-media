@@ -2,6 +2,7 @@
 
 import {useTranslations} from 'next-intl';
 import {useEffect, useState} from 'react';
+import {usePathname} from 'next/navigation';
 import LocaleSwitcher from './LocaleSwitcher';
 import NavigationLink from './NavigationLink';
 
@@ -9,6 +10,10 @@ export default function Navigation() {
   const t = useTranslations('Navigation');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Check if current page is home page (root path)
+  const isHomePage = pathname === '/' || pathname === '/en' || pathname === '/zh-CN';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,9 +21,12 @@ export default function Navigation() {
       setIsScrolled(scrollTop > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // Only add scroll listener if we're on the home page
+    if (isHomePage) {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [isHomePage]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -28,10 +36,19 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  // Determine background class based on page and scroll state
+  const getBackgroundClass = () => {
+    if (isHomePage) {
+      // On home page: transparent initially, black when scrolled
+      return isScrolled ? 'bg-black shadow-lg' : 'bg-transparent';
+    } else {
+      // On other pages: always black
+      return 'bg-black shadow-lg';
+    }
+  };
+
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black shadow-lg' : 'bg-transparent'
-    }`}>
+    <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getBackgroundClass()}`}>
       <nav className="container flex justify-between p-2 text-white items-center">
         <div className="flex-shrink-0">
           <img src="/images/logo-white-en.png" alt="logo" width={200} height={100} />

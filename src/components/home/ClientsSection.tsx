@@ -13,18 +13,18 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
   return (
     <section className="py-[150px] text-white bg-[url('/images/client-section-bg.jpg')] bg-cover bg-no-repeat bg-fixed bg-center">
       <div className="container mx-auto px-4">
-            <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="col-span-1">
-              <p className="text-white font-light text-lg">
-            we served
+          <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+           <div className="col-span-2">
+              <p className="text-white text-lg">
+            {t('subtitle')}
           </p>
-          <h2 className="mb-2 text-3xl md:text-6xl font-black uppercase text-white">
+          <h2 className="mb-4 mt-2 text-3xl md:text-6xl font-black uppercase text-white">
             {t('title')}
           </h2>
           </div>
-          <div className="col-span-">
+          <div className="col-span-1">
             <p className="text-white text-md font-light pt-[20px]">
-            When establishing seamless connections between brands and consumers, we always support it with effective communication.
+            {t('description')}
           </p>
           </div>
         </div>

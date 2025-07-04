@@ -15,7 +15,12 @@
     "locale": "{locale, select, en {English} zh_CN {简体中文} other {Unknown}}"
   },
   "Manifest": {
-    "name": "B&D Media"
+    "name": "B&D Media",
+    "LogoLink": "/images/logo-white-en.png"
+  },
+  "Button": {
+    "viewMore": "View More",
+    "learnMore": "Learn More"
   },
   "Navigation": {
     "home": "Home",
@@ -29,6 +34,7 @@
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
     "title": "Page not found"
   },
+
   "PageLayout": {
     "links": {
       "docs": {
@@ -47,24 +53,28 @@
     "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
     "title": "Pathnames"
   },
-  "HomePage": {
+  "HomePage": { 
     "hero": {
       "title": "Diverse Brand Communication Solutions",
       "subtitle": "We help brands connect with their audience through strategic communication",
       "cta": "Get Started"
     },
-    "services": {
-      "title": "Our Services",
-      "viewMore": "View More",
-      "items": {
-        "brandStrategy": "Brand Strategy",
-        "digitalMarketing": "Digital Marketing",
-        "production": "Production"
-      }
+     "services": {
+      "title": "Empowering<br />Brand Growth",
+      "subtitle": "Our Services",
+      "description": "Whether it’s breaking through for a new brand or revitalizing an established one, we tailor communication strategies from brand positioning to execution. Our end-to-end solutions ensure that every investment delivers tangible and measurable impact.",
+      "service1": "Brand Strategy", 
+      "service2": "Digital Marketing",
+      "service3": "Project Implementation"
     },
     "clients": {
-      "title": "Our Clients",
-      "description": "Trusted by leading brands across industries"
+      "title": "Partnering with Exceptional Brands",
+      "subtitle": "Our Clients",
+      "description": "We are not just service providers—we are partners in your brand’s journey. From startups to established global brands, we are committed to delivering excellence in everything we do."
+    },
+    "connecting": {
+      "title": "Crossing Cultures, Connecting Globally",
+      "description": "B&D Media was founded in Toronto, Canada, and has since expanded to Beijing, China. With a dual-hub strategy spanning both North America and China, we blend diverse cultural perspectives to create global-minded communication strategies. Through strategic consulting, creative storytelling, and digital technology, we help brands break through geographical boundaries and engage with audiences worldwide."
     },
     "industries": {
       "title": "Industries We Serve",
@@ -78,12 +88,10 @@
         "Entertainment"
       ]
     },
-    "connecting": {
-      "title": "Connecting Brands to Global Audience",
-      "description": "B&D Media is a creative agency based in Toronto and Beijing, specializing in impactful brand communication. We combine strategy, storytelling, and technology to help brands connect with audiences through video production, digital content, and integrated marketing."
-    },
     "news": {
-      "title": "Latest News",
+      "title": "Global Perspective, Cutting-Edge Insights",
+      "subtitle": "Latest News",
+      "description": "We stay ahead of the curve by tracking global brand communication trends and sharing the latest case studies and industry insights. Our goal is to provide brands with forward-thinking strategies and practical guidance.",
       "readMore": "Read More"
     }
   },
@@ -96,6 +104,15 @@
     "mission": {
       "title": "Our Mission",
       "description": "We strive to empower individuals and organizations through technology education. Our team is committed to delivering excellence in everything we do."
+    },
+    "advantage": {
+      "title": "Our Advantage",
+      "advantage1_title": "International Perspective, Local Execution",
+      "advantage1_description": "Based on the North American marketing methodology, combined with the characteristics of the Chinese market, providing customized communication strategies.",
+      "advantage2_title": "Data-driven, Precise Insights",
+      "advantage2_description": "Using advanced data analysis tools to understand consumer behavior and accurately target the target audience.",
+      "advantage3_title": "Creative First, Technology Second",
+      "advantage3_description": "Combining advanced technology with creative strategies to create truly impactful content."
     },
     "team": {
       "title": "Our Team",

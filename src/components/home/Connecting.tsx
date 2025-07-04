@@ -1,34 +1,8 @@
-// import { useTranslations } from 'next-intl';
-// import Link from 'next/link';
 
-// export default function Connecting() {
-//   const t = useTranslations('HomePage.connecting');
-
-//   return (
-//     <section className="bg-gray-100 pt-[100px]">
-//       <div className="container mx-auto px-4">
-//         <div className="mb-12">
-//           <div className="text-center">
-//             <h2 className="text-3xl text-[#031615] font-black  ">
-//               {t('title')}
-//             </h2>
-//             <p className="mt-6 text-lg font-light w-2/3 mx-auto">
-//               {t('description')}
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="flex justify-center">
-//         <img src="/images/bridge.png" alt="connecting" className="w-full h-full object-cover" />
-//       </div>
-//     </section>
-//   );
-// }
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import { use, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function Connecting() {
   const t = useTranslations('HomePage.connecting');

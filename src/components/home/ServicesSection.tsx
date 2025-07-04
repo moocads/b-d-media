@@ -34,6 +34,7 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ services = [] }: ServicesSectionProps) {
   const t = useTranslations('HomePage.services');
+  const tButton = useTranslations('Button');
   
   // Fallback services if API fails
   const fallbackServices = [
@@ -73,19 +74,19 @@ export default function ServicesSection({ services = [] }: ServicesSectionProps)
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="col-span-2">
               <p className="text-gray-700 text-lg">
-            what we provide
+            {t('subtitle')}
           </p>
-          <h2 className="mb-2 text-3xl md:text-6xl font-black uppercase text-black">
-            {t('title')}
+          <h2 className="mb-4 mt-2 text-3xl md:text-6xl font-black uppercase text-black" 
+              dangerouslySetInnerHTML={{ __html: t('title') }}>
           </h2>
           </div>
           <div className="col-span-1">
             <p className="text-gray-700 text-md">
-            When establishing seamless connections between brands and consumers, we always support it with effective communication.
+            {t('description')}
           </p>
           <br />
           <Link href="/contact" className="bg-black rounded-full px-4 py-2 text-white text-sm mt-2">
-            Learn More
+              {tButton('learnMore')}
           </Link>
           </div>
         </div>
@@ -99,15 +100,6 @@ export default function ServicesSection({ services = [] }: ServicesSectionProps)
               alt={service.alt}
             />
           ))}
-        </div>
-        
-        <div className="mt-8 text-center">
-          <Link
-            href="/services"
-            className="inline-block rounded bg-black px-6 py-2 text-sm text-white"
-          >
-            {t('viewMore')}
-          </Link>
         </div>
       </div>
     </section>

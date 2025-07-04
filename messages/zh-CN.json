@@ -15,7 +15,12 @@
     "locale": "{locale, select, en {English} zh_CN {简体中文} other {Unknown}}"
   },
   "Manifest": {
-    "name": "B&D Media"
+    "name": "B&D Media",
+    "LogoLink": "/images/logo-white-en.png"
+  },
+  "Button": {
+    "viewMore": "查看更多",
+    "learnMore": "了解更多"
   },
   "Navigation": {
     "home": "首页",
@@ -29,6 +34,7 @@
     "description": "请检查浏览器地址栏或使用导航前往已知页面。",
     "title": "页面未找到"
   },
+
   "PageLayout": {
     "links": {
       "docs": {
@@ -53,18 +59,22 @@
       "subtitle": "我们帮助品牌通过战略传播与受众建立联系",
       "cta": "立即开始"
     },
-    "services": {
-      "title": "我们的服务",
-      "viewMore": "查看更多",
-      "items": {
-        "brandStrategy": "品牌战略",
-        "digitalMarketing": "数字营销",
-        "production": "制作"
-      }
+      "services": {
+      "title": "赋能品牌生长",
+      "subtitle": "我们的服务",
+      "description": "无论是新品牌破圈还是成熟品牌焕新，我们量身定制传播路径，从品牌战略到落地执行，我们提供完整的传播解决方案，让每份投入都产生可感知的传播价值。",
+      "service1":"品牌战略",
+      "service2":"数字营销",
+      "service3":"项目落地"
     },
     "clients": {
-      "title": "我们的客户",
-      "description": "受到各行业领先品牌的信任"
+      "title": "我们与品牌同行",
+      "subtitle": "我们的客户",
+      "description": "我们不只是服务提供者，更是品牌成长路上的长期伙伴。从初创到成熟，从本土到全球，我们以专业与热忱，陪伴每一个品牌的蜕变之旅。"
+    },
+    "connecting": {
+      "title": "跨越文化，连接全球",
+      "description": "B&D Media创立于北美加拿大多伦多，发展于北京。凭借横跨东西方的双枢纽布局，我们深度融合多元文化视角，为品牌打造具有全球共鸣的传播策略。通过战略咨询、创意叙事与数字科技的三维赋能，我们帮助品牌突破地域界限，在全球化舞台实现精准对话。"
     },
     "industries": {
       "title": "我们服务的行业",
@@ -78,24 +88,34 @@
         "娱乐"
       ]
     },
-    "connecting": {
-      "title": "连接品牌与全球受众",
-      "description": "B&D Media 是一家位于多伦多和北京的创意代理机构，专注于影响力品牌传播。我们结合策略、叙事和科技，帮助品牌通过视频制作、数字内容和整合营销与受众建立联系。"
-    },
+
     "news": {
-      "title": "最新动态",
+      "title": "洞察趋势<br />保持前沿思维",
+      "subtitle": "最新动态",
+      "description": "在快速变化的传播环境中，我们始终站在行业前沿。从国际趋势到本土实践，B&D Media 持续输出创新洞察与实战成果，为品牌提供与时俱进的解决方案。",
       "readMore": "阅读更多"
     }
   },
+
   "AboutPage": {
-    "title": "关于我们",
+    "title": "让传播，不止于传播",
+    "subtitle": "B&D Media 国际策略本土深耕",
     "ourStory": {
       "title": "我们的故事",
-      "description": "成立于2023年，我们一直致力于提供创新解决方案。我们的旅程始于一个简单的想法：让技术对每个人都可以访问，并已发展成为一个全面的学习和成长平台。"
+      "description": "B&D Media 于 2004 年在加拿大多伦多创立，2018 年正式进入中国市场，在北京组建本土化团队。我们以 “信息见效” 为核心准则，融合前沿技术与创新策略，为品牌打造真正高效的传播解决方案。"
     },
     "mission": {
-      "title": "我们的使命",
-      "description": "我们努力通过技术教育赋能个人和组织。我们的团队致力于在所有工作中提供卓越服务。"
+      "title": "我们的理念",
+      "description": "在信息爆炸的时代，单纯的曝光已远远不够。我们相信，唯有精准触达消费者情感的内容，才能激发共鸣，创造持久的品牌影响力。因此，我们不仅关注传播的广度，更注重内容的深度——让每一条信息都能精准命中目标受众，实现可衡量的商业价值。"
+    },
+    "advantage": {
+      "title": "我们的优势",
+      "advantage1_title": "国际化视野，本土化执行",
+      "advantage1_description": "结合北美理论与中国市场特点，提供定制化传播策略。",
+      "advantage2_title": "整合营销传播",
+      "advantage2_description": "从社交媒体到线下活动，打造全方位品牌声量。",
+      "advantage3_title": "数据化内容优化",
+      "advantage3_description": "基于用户行为分析，持续提升传播 ROI。"
     },
     "team": {
       "title": "我们的团队",
@@ -148,7 +168,7 @@
     "title": "Footer",
     "description": "B&D Media 成立于2023年，是一家专注于影响力品牌传播的创意代理机构。我们结合策略、叙事和科技，帮助品牌通过视频制作、数字内容和整合营销与受众建立联系。",
     "copyright": "© 2025 B&D Media. 版权所有。",
-    "footerLogoLink": "/images/logo.png",
+    "footerLogoLink": "/images/logo-white-en.png",
     "links": {
       "home": "首页",
       "about": "关于我们",
