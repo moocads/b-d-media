@@ -1,0 +1,213 @@
+{
+  "Error": {
+    "description": "<p>很抱歉，我們遇到了錯誤。</p><p>您可以嘗試<retry>重新載入</retry>您正在訪問的頁面。</p>",
+    "title": "出現了錯誤！"
+  },
+  "IndexPage": {
+    "description": "這是一個基本範例，演示了如何在Next.js App Router中使用<code>next-intl</code>。嘗試更改右上角的語言，看看內容如何變化。",
+    "title": "B&D Media"
+  },
+  "LocaleLayout": {
+    "title": "B&D Media"
+  },
+  "LocaleSwitcher": {
+    "label": "更改語言",
+    "locale": "{locale, select, en {English} zh_CN {簡體中文} zh_TC {繁體中文} other {Unknown}}"
+  },
+  "Manifest": {
+    "name": "B&D Media",
+    "LogoLink": "/images/logo-white-en.png"
+  },
+  "Button": {
+    "viewMore": "查看更多",
+    "learnMore": "了解更多"
+  },
+  "Navigation": {
+    "home": "首頁",
+    "pathnames": "路徑名",
+    "about": "關於我們",
+    "news": "新聞",
+    "contact": "聯絡我們",
+    "works": "案例"
+  },
+  "NotFoundPage": {
+    "description": "請檢查瀏覽器地址欄或使用導航前往已知頁面。",
+    "title": "頁面未找到"
+  },
+
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "description": "在官方文件中了解更多關於next-intl的資訊。",
+        "href": "https://next-intl.dev",
+        "title": "文件"
+      },
+      "source": {
+        "description": "在GitHub上瀏覽此範例的原始碼。",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+        "title": "原始碼"
+      }
+    }
+  },
+  "PathnamesPage": {
+    "description": "<p>路徑名也是國際化的。</p><p>如果您使用預設語言英語，您將在此頁面的瀏覽器地址欄中看到<code>/en/pathnames</code>。</p><p>如果您將語言更改為德語，URL將相應本地化（<code>/de/pfadnamen</code>）。</p>",
+    "title": "路徑名"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "多元化品牌傳播解決方案",
+      "subtitle": "我們幫助品牌通過戰略傳播與受眾建立聯繫",
+      "cta": "立即開始"
+    },
+      "services": {
+      "title": "賦能品牌生長",
+      "subtitle": "我們的服務",
+      "description": "無論是新品牌破圈還是成熟品牌煥新，我們量身定制傳播路徑，從品牌戰略到落地執行，我們提供完整的傳播解決方案，讓每份投入都產生可感知的傳播價值。",
+      "service1":"品牌戰略",
+      "service2":"數位行銷",
+      "service3":"專案落地"
+    },
+    "clients": {
+      "title": "我們與品牌同行",
+      "subtitle": "我們的客戶",
+      "description": "我們不只是服務提供者，更是品牌成長路上的長期夥伴。從初創到成熟，從本土到全球，我們以專業與熱忱，陪伴每一個品牌的蛻變之旅。"
+    },
+    "connecting": {
+      "title": "跨越文化，連接全球",
+      "description": "B&D Media創立於北美加拿大多倫多，發展於北京。憑藉橫跨東西方的雙樞紐佈局，我們深度融合多元文化視角，為品牌打造具有全球共鳴的傳播策略。通過戰略諮詢、創意敘事與數位科技的三維賦能，我們幫助品牌突破地域界限，在全球化舞台實現精準對話。"
+    },
+    "industries": {
+      "title": "我們服務的行業",
+      "description": "我們與各個領域的客戶合作，包括技術、金融、醫療保健、零售等",
+      "items": [
+        "技術",
+        "金融",
+        "醫療保健",
+        "零售",
+        "教育",
+        "娛樂"
+      ]
+    },
+
+    "news": {
+      "title": "洞察趨勢<br />保持前沿思維",
+      "subtitle": "最新動態",
+      "description": "在快速變化的傳播環境中，我們始終站在行業前沿。從國際趨勢到本土實踐，B&D Media 持續輸出創新洞察與實戰成果，為品牌提供與時俱進的解決方案。",
+      "readMore": "閱讀更多"
+    }
+  },
+
+  "AboutPage": {
+    "title": "讓傳播，不止於傳播",
+    "subtitle": "B&D Media 國際策略本土深耕",
+    "ourStory": {
+      "title": "我們的故事",
+      "description": "B&D Media 於 2004 年在加拿大多倫多創立，2018 年正式進入中國市場，在北京組建本土化團隊。我們以 「資訊見效」 為核心準則，融合前沿技術與創新策略，為品牌打造真正高效的傳播解決方案。"
+    },
+    "mission": {
+      "title": "我們的理念",
+      "description": "在資訊爆炸的時代，單純的曝光已遠遠不夠。我們相信，唯有精準觸達消費者情感的內容，才能激發共鳴，創造持久的品牌影響力。因此，我們不僅關注傳播的廣度，更注重內容的深度——讓每一條資訊都能精準命中目標受眾，實現可衡量的商業價值。"
+    },
+    "advantage": {
+      "title": "我們的優勢",
+      "advantage1_title": "國際化視野，本土化執行",
+      "advantage1_description": "結合北美理論與中國市場特點，提供定制化傳播策略。",
+      "advantage2_title": "整合行銷傳播",
+      "advantage2_description": "從社交媒體到線下活動，打造全方位品牌聲量。",
+      "advantage3_title": "數據化內容優化",
+      "advantage3_description": "基於用戶行為分析，持續提升傳播 ROI。"
+    },
+    "team": {
+      "title": "我們的團隊",
+      "member1": {
+        "name": "張偉",
+        "role": "執行長兼創始人"
+      }
+    }
+  },
+  "NewsPage": {
+    "title": "新聞",
+    "latestPosts": "最新文章",
+    "readMore": "閱讀更多"
+  },
+  "NewsDetail": {
+    "backToNews": "返回新聞"
+  },
+  "WorksPage": {
+    "title": "B&D Media案例",
+    "subtitle": "用故事重塑品牌表達，數據驅動的傳播革新",
+    "description_01": "我們與來自科技、金融、快消、奢侈品、醫療健康等多個行業的領先品牌攜手，助力品牌跨越文化邊界，打造深入人心的傳播體驗。從戰略規劃到創意執行，每一個案例都體現了B&D Media對「資訊見效」理念的堅持。",
+    "description_02": "無論是國際品牌的本地化深耕，還是本土品牌的全球化拓展，我們憑藉豐富的跨行業經驗、多元文化視角與數據驅動思維，為不同領域的合作夥伴持續交付可衡量的商業價值。"
+  },
+  "WorksDetail": {
+    "backToWorks": "返回作品"
+  },
+  "ContactPage": {
+    "title": "聯絡我們",
+    "getInTouch": "聯絡我們",
+    "contactIntro": "有問題或想了解更多？填寫下面的表格，我們的團隊將盡快回覆您。",
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "您的姓名",
+      "email": "電子郵件",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "留言",
+      "messagePlaceholder": "我們能為您做些什麼？",
+      "submit": "發送留言",
+      "successMessage": "感謝您的留言！我們將盡快與您聯繫。",
+      "errorMessage": "提交留言時出錯。請重試。"
+    },
+    "contactInfo": {
+      "title": "聯絡資訊",
+      "address": {
+        "title": "地址",
+        "value": "中國北京市朝陽區123號"
+      },
+      "email": {
+        "title": "電子郵件",
+        "value": "contact@example.com"
+      },
+      "phone": {
+        "title": "電話",
+        "value": "+86 10 1234 5678"
+      }
+    }
+  },
+  "Footer": {
+    "title": "Footer",
+    "description": "B&D Media 成立於2023年，是一家專注於影響力品牌傳播的創意代理機構。我們結合策略、敘事和科技，幫助品牌通過影片製作、數位內容和整合行銷與受眾建立聯繫。",
+    "copyright": "© 2025 B&D Media. 版權所有。",
+    "footerLogoLink": "/images/logo-white-en.png",
+    "links": {
+      "title":"站內連結",
+      "home": "首頁",
+      "about": "關於我們",
+      "services": "服務",
+      "work": "我們的作品",
+      "contact": "聯絡我們"
+    },
+    "contactInfo": {
+      "title": "聯絡方式",
+      "address": {
+        "location1": {
+          "country": "加拿大",
+          "city": "多倫多",
+          "address": "123 Main Street, 多倫多, 加拿大"
+        },
+        "location2": {
+          "country": "中國",
+          "city": "北京",
+          "address": "123 長安大道, 北京, 中國"
+        }
+      },
+      "email": {
+        "title": "電子郵件",
+        "value": "contact@example.com"
+      },
+      "phone": {
+        "title": "電話",
+        "value": "+86 10 1234 5678"
+      }
+    }
+  }
+}
