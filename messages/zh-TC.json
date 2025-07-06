@@ -12,7 +12,7 @@
   },
   "LocaleSwitcher": {
     "label": "更改語言",
-    "locale": "{locale, select, en {English} zh_CN {簡體中文} zh_TC {繁體中文} other {Unknown}}"
+    "locale": "{locale, select, en {English} zh_CN {簡體中文} zh_TC {繁體中文} fr {Français} other {Unknown}}"
   },
   "Manifest": {
     "name": "B&D Media",

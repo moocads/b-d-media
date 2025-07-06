@@ -5,6 +5,7 @@ import {useParams} from 'next/navigation';
 import {Locale} from 'next-intl';
 import {ChangeEvent, ReactNode, useTransition} from 'react';
 import {usePathname, useRouter} from '@/i18n/navigation';
+import {Globe} from 'lucide-react';
 
 type Props = {
   children: ReactNode;
@@ -38,20 +39,21 @@ export default function LocaleSwitcherSelect({
   return (
     <label
       className={clsx(
-        'relative text-gray-400',
+        'relative text-gray-400 flex items-center gap-2',
         isPending && 'transition-opacity [&:disabled]:opacity-30'
       )}
     >
+      <Globe className="w-4 h-4" />
       <p className="sr-only">{label}</p>
       <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
+        className="inline-flex appearance-none bg-transparent pl-0 pr-6"
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}
       >
         {children}
       </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
+      {/* <span className="pointer-events-none absolute right-2 top-0">⌄</span> */}
     </label>
   );
 }

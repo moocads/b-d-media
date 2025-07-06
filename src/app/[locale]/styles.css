@@ -117,3 +117,20 @@ body {
   opacity: 0;
   animation: fadeInUp 1.6s ease-out 0.4s forwards;
 }
+
+/* 全局自定义鼠标光标 */
+html, body {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2Y0YTAzYjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGNpcmNsZSBjbGFzcz0iY2xzLTEiIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIvPgo8L3N2Zz4K') 18 18, auto !important;
+}
+
+/* 可点击元素使用 pointer 光标 */
+button, a, select, input[type="button"], input[type="submit"], input[type="reset"], 
+[role="button"], [tabindex]:not([tabindex="-1"]) {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2Y0YTAzYjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGNpcmNsZSBjbGFzcz0iY2xzLTEiIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIvPgo8L3N2Zz4K') 18 18, pointer !important;
+}
+
+/* 文本选择区域使用 text 光标 */
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], 
+input[type="url"], input[type="tel"], textarea, [contenteditable="true"] {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2Y0YTAzYjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGNpcmNsZSBjbGFzcz0iY2xzLTEiIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIvPgo8L3N2Zz4K') 18 18, text !important;
+}
