@@ -126,7 +126,8 @@
     }
   },
   "NewsPage": {
-    "title": "新闻",
+    "title": "B&D最新动态与行业前瞻",
+    "subtitle": "创见未来，全球视野",
     "latestPosts": "最新文章",
     "readMore": "阅读更多"
   },

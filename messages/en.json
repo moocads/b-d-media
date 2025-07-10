@@ -124,7 +124,8 @@
     }
   },
   "NewsPage": {
-    "title": "News",
+    "title": "B&D Media News",
+    "subtitle": "Innovation, Global Perspective",
     "latestPosts": "Latest Posts",
     "readMore": "Read More"
   },

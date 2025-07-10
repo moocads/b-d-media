@@ -42,8 +42,14 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
 
   return (
     <PageLayout title={t('title')}>
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">{t('latestPosts')}</h1>
+ 
+         <h1 className="text-3xl font-semibold leading-tight tracking-tight text-black md:text-5xl fade-in-left">
+            {t('title')}
+         </h1>
+ 
+          <h4 className="text-xl text-black font-normal mt-[20px] fade-in-left-delayed">{t('subtitle')}</h4>
+                    <br />
+                    <br />
 
         {posts.length === 0 ? (
           <p>No posts found.</p>
@@ -66,11 +72,11 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
                         day: 'numeric',
                       })}
                     </p>
-                    <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+                    <h2 className="text-xl font-medium mb-2 text-black">{post.title}</h2>
                     <p className="text-gray-600 mb-4">{post.summary}</p>
                     <Link
                       href={`/${locale}/news/${post.slug}`}
-                      className="text-blue-600 font-medium hover:underline"
+                      className="font-medium hover:underline rounded-full px-4 py-2 bg-black-100 text-white"
                     >
                       {t('readMore')} →
                     </Link>
@@ -80,7 +86,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
             })}
           </div>
         )}
-      </div>
+
     </PageLayout>
   );
 }
