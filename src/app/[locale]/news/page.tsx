@@ -64,9 +64,10 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
                   ) : (
                     <div className="h-48 bg-gray-200"></div>
                   )}
-                  <div className="p-4">
-               
+                  <div className="p-4 relative">
+               <Link href={`/${locale}/news/${post.slug}`}>
                     <h2 className="text-[24px] font-bold mb-2 text-black uppercase">{post.title}</h2>
+               </Link>
                          <p className="text-sm text-gray-500 mb-2">
                       {new Date(post.createdAt).toLocaleDateString(locale, {
                         year: 'numeric',
@@ -77,7 +78,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
                     <p className="text-gray-600 mb-4 ">{post.summary}</p>
                     <Link
                       href={`/${locale}/news/${post.slug}`}
-                      className="font-medium hover:underline rounded-full px-4 py-2 bg-black text-white flex items-center gap-2"
+                      className="font-medium hover:underline px-4 py-2 bg-black text-white flex items-center gap-2 absolute bottom-0 right-0"
                     >
                       {t('readMore')} 
                       <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
