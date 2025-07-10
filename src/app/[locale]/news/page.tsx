@@ -58,13 +58,13 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
             {posts.map((post) => {
               const imageUrl = post.image?.url;
               return (
-                <div key={post.id} className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div key={post.id} className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
                   {imageUrl ? (
                     <img src={imageUrl} alt={post.title} className="h-48 w-full object-cover" />
                   ) : (
                     <div className="h-48 bg-gray-200"></div>
                   )}
-                  <div className="p-4 relative">
+                  <div className="p-4 ">
                <Link href={`/${locale}/news/${post.slug}`}>
                     <h2 className="text-[24px] font-bold mb-2 text-black uppercase">{post.title}</h2>
                </Link>
@@ -80,7 +80,7 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
                       href={`/${locale}/news/${post.slug}`}
                       className="font-medium hover:underline px-4 py-2 bg-black text-white flex items-center gap-2 absolute bottom-0 right-0"
                     >
-                      {t('readMore')} 
+      
                       <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
 		<path d="M1 17.3704L18 1M18 1V11.6852M18 1H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 	</svg>
