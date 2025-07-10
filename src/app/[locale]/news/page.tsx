@@ -65,20 +65,24 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
                     <div className="h-48 bg-gray-200"></div>
                   )}
                   <div className="p-4">
-                    <p className="text-sm text-gray-500 mb-2">
+               
+                    <h2 className="text-[24px] font-bold mb-2 text-black uppercase">{post.title}</h2>
+                         <p className="text-sm text-gray-500 mb-2">
                       {new Date(post.createdAt).toLocaleDateString(locale, {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
                       })}
                     </p>
-                    <h2 className="text-xl font-medium mb-2 text-black">{post.title}</h2>
-                    <p className="text-gray-600 mb-4">{post.summary}</p>
+                    <p className="text-gray-600 mb-4 ">{post.summary}</p>
                     <Link
                       href={`/${locale}/news/${post.slug}`}
-                      className="font-medium hover:underline rounded-full px-4 py-2 bg-black-100 text-white"
+                      className="font-medium hover:underline rounded-full px-4 py-2 bg-black text-white flex items-center gap-2"
                     >
-                      {t('readMore')} →
+                      {t('readMore')} 
+                      <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+		<path d="M1 17.3704L18 1M18 1V11.6852M18 1H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+	</svg>
                     </Link>
                   </div>
                 </div>
