@@ -2,6 +2,7 @@ import{ Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from 'next/link';
 import PageLayout from "@/components/PageLayout";
+import VideoThumbnail from "@/components/VideoThumbnail";
 import {strapi} from '@/lib/strapi';
 
 export default async function WorksPage({params}: {params: Promise<{locale: Locale}>}) {
@@ -47,6 +48,23 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
             </div>
             </div>
         </div>
+        </div>
+        <div className="mt-20 border-t border-black-200"></div>
+
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-5 mt-20">
+          <div className="col-span-1">
+            <VideoThumbnail
+              videoId="7bu7wIVuwVE"
+              bilibiliId="BV1As411u7X9"
+              startTime={75}
+              title={t('title')}
+              className="w-full h-64"
+            />
+            <h3 className="text-4xl font-semibold leading-tight tracking-tight text-black fade-in-left mt-4">
+              {t('title')}
+            </h3>
+          </div>
+                
         </div>
     </PageLayout>
   );
