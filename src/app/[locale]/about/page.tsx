@@ -84,6 +84,40 @@ export default function AboutPage({params}: Props) {
           </div>
         </div>
       </section>
+
+      <div className="container mx-auto my-[100px] relative z-10">
+    
+            <div className="grid grid-cols-3 gap-16"> 
+              <div className="col-span-1">   
+                <div className="overflow-hidden">
+                <img src="/images/team/john.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
+                </div>
+              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member1.name') || 'John Doe'}</h3>
+              <p className="mb-4 font-light text-black">{t('team.member1.role') || 'CEO & Founder'}</p>
+              <br />
+              <p className="mb-4 font-light text-black">{t('team.member1.description') || 'CEO & Founder'}</p>
+               </div>
+               <div className="col-span-1">   
+                <div className="overflow-hidden">
+                <img src="/images/team/mia.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
+                </div>
+              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member2.name') || 'John Doe'}</h3>
+              <p className="mb-4 font-light text-black">{t('team.member2.role') || 'CEO & Founder'}</p>
+              <br />
+              <p className="mb-4 font-light text-black">{t('team.member2.description') || 'CEO & Founder'}</p>
+               </div>
+               <div className="col-span-1">   
+                <div className="overflow-hidden">
+                <img src="/images/team/david.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
+                </div>
+              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member3.name') || 'John Doe'}</h3>
+              <p className="mb-4 font-light text-black">{t('team.member3.role') || 'CEO & Founder'}</p>
+              <br />
+              <p className="mb-4 font-light text-black">{t('team.member3.description') || 'CEO & Founder'}</p>
+               </div>
+            </div>
+        
+      </div>
     </>
   );
 }
