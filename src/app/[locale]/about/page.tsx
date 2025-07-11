@@ -85,7 +85,7 @@ export default function AboutPage({params}: Props) {
         </div>
       </section>
 
-      {/* <div className="container mx-auto my-[100px] relative z-10">
+      <div className="container mx-auto my-[100px] relative z-10">
     
             <div className="grid grid-cols-3 gap-16"> 
               <div className="col-span-1">   
@@ -117,7 +117,7 @@ export default function AboutPage({params}: Props) {
                </div>
             </div>
         
-      </div> */}
+      </div>
     </>
   );
 }
