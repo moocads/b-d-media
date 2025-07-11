@@ -119,7 +119,18 @@
       "title": "Our Team",
       "member1": {
         "name": "John Doe",
-        "role": "CEO & Founder"
+        "role": "CEO & Founder",
+        "description": "John Doe is the CEO and founder of B&D Media. He has over 20 years of marketing experience. He graduated from Tsinghua University, and obtained a master's degree in business administration. Before joining B&D Media, he worked in many well-known companies, including Alibaba, Tencent and Baidu."
+      },
+      "member2": {
+        "name": "John Doe",
+        "role": "CEO & Founder",
+        "description": "John Doe is the CEO and founder of B&D Media. He has over 20 years of marketing experience. He graduated from Tsinghua University, and obtained a master's degree in business administration. Before joining B&D Media, he worked in many well-known companies, including Alibaba, Tencent and Baidu."  
+      },
+      "member3": {
+        "name": "John Doe",
+        "role": "CEO & Founder",
+        "description": "John Doe is the CEO and founder of B&D Media. He has over 20 years of marketing experience. He graduated from Tsinghua University, and obtained a master's degree in business administration. Before joining B&D Media, he worked in many well-known companies, including Alibaba, Tencent and Baidu."  
       }
     }
   },

@@ -85,7 +85,7 @@ export default function AboutPage({params}: Props) {
         </div>
       </section>
 
-      <div className="container mx-auto my-[100px] relative z-10">
+      {/* <div className="container mx-auto my-[100px] relative z-10">
     
             <div className="grid grid-cols-3 gap-16"> 
               <div className="col-span-1">   
@@ -93,18 +93,18 @@ export default function AboutPage({params}: Props) {
                 <img src="/images/team/john.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
                 </div>
               <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member1.name') || 'John Doe'}</h3>
-              <p className="mb-4 font-light text-black">{t('team.member1.role') || 'CEO & Founder'}</p>
+              <p className="mb-4 font-light text-black">{t('team.member1.role') }</p>
               <br />
-              <p className="mb-4 font-light text-black">{t('team.member1.description') || 'CEO & Founder'}</p>
+              <p className="mb-4 font-light text-black">{t('team.member1.description')}</p>
                </div>
                <div className="col-span-1">   
                 <div className="overflow-hidden">
                 <img src="/images/team/mia.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
                 </div>
-              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member2.name') || 'John Doe'}</h3>
-              <p className="mb-4 font-light text-black">{t('team.member2.role') || 'CEO & Founder'}</p>
+              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member2.name')}</h3>
+              <p className="mb-4 font-light text-black">{t('team.member2.role') }</p>
               <br />
-              <p className="mb-4 font-light text-black">{t('team.member2.description') || 'CEO & Founder'}</p>
+              <p className="mb-4 font-light text-black">{t('team.member2.description') }</p>
                </div>
                <div className="col-span-1">   
                 <div className="overflow-hidden">
@@ -117,7 +117,7 @@ export default function AboutPage({params}: Props) {
                </div>
             </div>
         
-      </div>
+      </div> */}
     </>
   );
 }
