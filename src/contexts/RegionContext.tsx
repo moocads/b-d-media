@@ -1,12 +1,11 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Region } from '@/components/RegionSelector';
 import { detectWithFallback, DetectionResult } from '@/lib/ipDetection';
 
 interface RegionContextType {
-  region: Region | null;
-  setRegion: (region: Region) => void;
+  region: string | null;
+  setRegion: (region: string) => void;
   detectionResult: DetectionResult | null;
   isLoading: boolean;
   recommendedPlatform: 'youtube' | 'bilibili';
@@ -15,13 +14,13 @@ interface RegionContextType {
 const RegionContext = createContext<RegionContextType | undefined>(undefined);
 
 export function RegionProvider({ children }: { children: ReactNode }) {
-  const [region, setRegionState] = useState<Region | null>(null);
+  const [region, setRegionState] = useState<string | null>(null);
   const [detectionResult, setDetectionResult] = useState<DetectionResult | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // 从localStorage读取保存的区域
-    const savedRegion = localStorage.getItem('user-region') as Region;
+    const savedRegion = localStorage.getItem('user-region');
     if (savedRegion) {
       setRegionState(savedRegion);
       setIsLoading(false);
@@ -30,9 +29,8 @@ export function RegionProvider({ children }: { children: ReactNode }) {
       detectWithFallback()
         .then((result) => {
           setDetectionResult(result);
-          
           // 根据检测结果设置默认区域
-          const defaultRegion: Region = 'overseas'; // 默认海外
+          const defaultRegion = 'overseas'; // 默认海外
           setRegionState(defaultRegion);
           localStorage.setItem('user-region', defaultRegion);
         })
@@ -48,7 +46,7 @@ export function RegionProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const setRegion = (newRegion: Region) => {
+  const setRegion = (newRegion: string) => {
     setRegionState(newRegion);
     localStorage.setItem('user-region', newRegion);
   };
