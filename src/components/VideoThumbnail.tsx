@@ -11,6 +11,7 @@ interface VideoThumbnailProps {
   thumbnailUrl?: string;
   startTime?: number;
   title?: string;
+  description?: string;
   className?: string;
 }
 
@@ -20,6 +21,7 @@ export default function VideoThumbnail({
   thumbnailUrl, 
   startTime = 0, 
   title,
+  description,
   className = "" 
 }: VideoThumbnailProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);

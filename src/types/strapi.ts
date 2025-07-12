@@ -85,3 +85,14 @@ export interface Team {
   updatedAt: string;
 }
 
+export interface Work {
+  id: number;
+  title: string;
+  description: string;
+  thumbnail: StrapiImage;
+  videoId: string;
+  bilibiliId: string;
+  startTime: number;
+  createdAt: string;
+  updatedAt: string;
+}
