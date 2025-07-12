@@ -54,7 +54,7 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
 
         <div className="grid grid-cols-3 md:grid-cols-3 gap-5 mt-20">
           {works.map((work) => (
-            <div className="col-span-1">
+            <div key={work.id} className="col-span-1">
             <VideoThumbnail
               videoId={work.videoId}
               bilibiliId={work.bilibiliId}
