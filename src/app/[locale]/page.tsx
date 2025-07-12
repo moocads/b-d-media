@@ -32,8 +32,3 @@ export default async function IndexPage({ params }: { params: Promise<{ locale: 
     </main>
   );
 }
-
-// Generate static params for static rendering
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
