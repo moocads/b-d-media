@@ -1,5 +1,5 @@
 import { strapi } from './strapi';
-import type { Client, NewsArticle, Service, StrapiResponse, StrapiSystemFields } from '../types/strapi';
+import type { Client, NewsArticle, Service, StrapiResponse, StrapiSystemFields, Team } from '../types/strapi';
 import { Locale } from 'next-intl';
 
 // Define the structure of Strapi data items
@@ -58,6 +58,27 @@ export async function getNews(locale: Locale, limit = 3): Promise<NewsArticle[]>
     return response.data;
   } catch (error) {
     console.error('Error fetching news:', error);
+    return [];
+  }
+}
+
+/**
+ * Fetch teams from Strapi CMS
+ */
+export async function getTeams(locale: Locale, limit = 30): Promise<Team[]> {
+  try {
+    const response = await strapi.find<Team>('teams', {
+      populate: ['image'],
+      pagination: {
+        page: 1,
+        pageSize: limit
+      },
+      locale: locale as any,
+    });
+    
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching teams:', error);
     return [];
   }
 }

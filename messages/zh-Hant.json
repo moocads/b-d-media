@@ -12,7 +12,7 @@
   },
   "LocaleSwitcher": {
     "label": "更改語言",
-    "locale": "{locale, select, en {English} zh_CN {簡體中文} zh_TC {繁體中文} fr {Français} other {Unknown}}"
+    "locale": "{locale, select, en {English} zh_CN {简体中文} zh_Hant {繁體中文} fr {Français} other {Unknown}}"
   },
   "Manifest": {
     "name": "B&D Media",
@@ -127,6 +127,7 @@
   },
   "NewsPage": {
     "title": "新聞",
+    "subtitle": "創見未來，全球視野",
     "latestPosts": "最新文章",
     "readMore": "閱讀更多"
   },

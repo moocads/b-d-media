@@ -1,19 +1,17 @@
-import {Locale, useTranslations} from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
-import {use} from 'react';
+import {Locale} from 'next-intl';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 import PageLayout from '@/components/PageLayout';
+import { getTeams } from '@/lib/api';
 
-type Props = {
-  params: Promise<{locale: Locale}>;
-};
-
-export default function AboutPage({params}: Props) {
-  const {locale} = use(params);
+export default async function AboutPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const {locale} = await params;
 
   // Enable static rendering
   setRequestLocale(locale);
 
-  const t = useTranslations('AboutPage');
+  const teams = await getTeams(locale);
+
+  const t = await getTranslations('AboutPage');
 
   return (
     <>
@@ -88,33 +86,17 @@ export default function AboutPage({params}: Props) {
       <div className="container mx-auto my-[100px] relative z-10">
     
             <div className="grid grid-cols-3 gap-16"> 
-              <div className="col-span-1">   
-                <div className="overflow-hidden">
-                <img src="/images/team/john.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
+              {teams.map((team) => (
+                <div key={team.id} className="col-span-1">   
+                  <div className="overflow-hidden">
+                    <img src={team.image?.url} alt={team.name} className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
+                  </div>
+                  <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{team.name}</h3>
+                  <p className="mb-4 font-light text-black">{team.role}</p>
+                  <br />
+                  <p className="mb-4 font-light text-black">{team.description}</p>
                 </div>
-              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member1.name') || 'John Doe'}</h3>
-              <p className="mb-4 font-light text-black">{t('team.member1.role') }</p>
-              <br />
-              <p className="mb-4 font-light text-black">{t('team.member1.description')}</p>
-               </div>
-               <div className="col-span-1">   
-                <div className="overflow-hidden">
-                <img src="/images/team/mia.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
-                </div>
-              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member2.name')}</h3>
-              <p className="mb-4 font-light text-black">{t('team.member2.role') }</p>
-              <br />
-              <p className="mb-4 font-light text-black">{t('team.member2.description') }</p>
-               </div>
-               <div className="col-span-1">   
-                <div className="overflow-hidden">
-                <img src="/images/team/david.jpg" alt="Team Member 1" className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
-                </div>
-              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{t('team.member3.name') || 'John Doe'}</h3>
-              <p className="mb-4 font-light text-black">{t('team.member3.role') || 'CEO & Founder'}</p>
-              <br />
-              <p className="mb-4 font-light text-black">{t('team.member3.description') || 'CEO & Founder'}</p>
-               </div>
+              ))}
             </div>
         
       </div>
