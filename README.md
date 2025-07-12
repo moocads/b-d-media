@@ -2,6 +2,7 @@
 
 An example that showcases basic usage of `next-intl` with the App Router, including internationalized routing. And it also shows how to integrate `strapi`.
 
+
 ## How to use
 
 1. Clone the repository
