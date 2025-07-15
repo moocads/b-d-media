@@ -74,3 +74,25 @@ export interface Service {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface Team {
+  id: number;
+  name: string;
+  role: string;
+  description: string;
+  image: StrapiImage;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Work {
+  id: number;
+  title: string;
+  description: string;
+  thumbnail: StrapiImage;
+  videoId: string;
+  bilibiliId: string;
+  startTime: number;
+  createdAt: string;
+  updatedAt: string;
+}

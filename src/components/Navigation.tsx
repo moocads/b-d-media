@@ -14,7 +14,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   // Check if current page is home page (root path)
-  const isHomePage = pathname === '/' || pathname === '/en' || pathname === '/zh-CN' || pathname === '/zh-TC';
+  const isHomePage = pathname === '/' || pathname === '/en' || pathname === '/zh-CN' || pathname === '/zh-Hant';
 
   useEffect(() => {
     const handleScroll = () => {

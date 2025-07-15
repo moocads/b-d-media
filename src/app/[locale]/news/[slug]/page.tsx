@@ -70,7 +70,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ loc
         {post.image && (
           <div className="mb-8">
             <img
-              src={post.image.url}
+              src={post.image?.url}
               alt={post.title}
               className="w-full h-auto rounded-lg"
             />
