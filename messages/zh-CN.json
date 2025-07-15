@@ -204,21 +204,21 @@
         "location1": {
           "country": "加拿大",
           "city": "多伦多",
-          "address": "123 Main Street, 多伦多, 加拿大"
+          "address": "5008-66 Wellington St W, Toronto, ON M5K 1A1. Canada"
         },
         "location2": {
           "country": "中国",
           "city": "北京",
-          "address": "123 长安大道, 北京, 中国"
+          "address": "北京朝阳区望京合生麒麟社8号楼508室"
         }
       },
       "email": {
         "title": "电子邮件",
-        "value": "contact@example.com"
+        "value": "james@B-D-Media.com"
       },
       "phone": {
         "title": "电话",
-        "value": "+86 10 1234 5678"
+        "value": "+86 158 0120 5729"
       }
     }
   }

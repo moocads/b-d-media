@@ -202,21 +202,21 @@
         "location1": {
           "country": "Canada",
           "city": "Toronto Office",
-          "address": "123 Main Street, Toronro, Canada"
+          "address": "5008-66 Wellington St W, Toronto, ON M5K 1A1. Canada"
         },
         "location2": {
           "country": "China",
           "city": "Beijing Office",
-          "address": "123 Main Street, Beijing, China"
+          "address": "508, Building 8, Heshoulin, Wangjing, Chaoyang District, Beijing, China"
         }
       },
       "email": {
         "title": "Email",
-        "value": "contact@example.com"
+        "value": "james@B-D-Media.com"
       },
       "phone": {
         "title": "Phone",
-        "value": "+1 (555) 123-4567"
+        "value": "+86 158 0120 5729"
       }
     }
   }

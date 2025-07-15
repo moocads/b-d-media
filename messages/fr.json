@@ -189,21 +189,21 @@
         "location1": {
           "country": "Canada",
           "city": "Bureau de Toronto",
-          "address": "123 Rue Principale, Toronto, Canada"
+          "address": "5008-66 Wellington St W, Toronto, ON M5K 1A1. Canada"
         },
         "location2": {
           "country": "Chine",
           "city": "Bureau de Beijing",
-          "address": "123 Rue Principale, Beijing, Chine"
+          "address": "508, Building 8, Heshoulin, Wangjing, Chaoyang District, Beijing, China"
         }
       },
       "email": {
         "title": "Email",
-        "value": "contact@exemple.com"
+        "value": "james@B-D-Media.com"
       },
       "phone": {
         "title": "Téléphone",
-        "value": "+1 (555) 123-4567"
+        "value": "+86 158 0120 5729"
       }
     }
   }
