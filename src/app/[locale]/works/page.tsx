@@ -64,7 +64,7 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
               description={work.description}
               className="w-full h-64"
             />
-            <h3 className="text-4xl font-semibold leading-tight tracking-tight text-black fade-in-left mt-4">
+            <h3 className="text-xl md:text-4xl font-semibold leading-tight tracking-tight text-black fade-in-left mt-4">
               {work.title}
             </h3>
           </div>
