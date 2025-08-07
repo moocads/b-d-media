@@ -52,7 +52,7 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
         </div>
         <div className="mt-20 border-t border-black-200"></div>
 
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-5 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
           {works.map((work) => (
             <div key={work.id} className="col-span-1">
             <VideoThumbnail
