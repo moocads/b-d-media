@@ -11,10 +11,10 @@ import LoadingIndicator from '@/components/LoadingIndicator';
 import './styles.css';
 import Footer from '@/components/Footer';
 
-type Props = {
+type Props = Readonly<{
   children: ReactNode;
-  params: Promise<{locale: Locale}>;
-};
+  params: Promise<{locale: string}>;
+}>;
 
 const inter = Inter({subsets: ['latin']});
 
@@ -29,7 +29,7 @@ export function generateStaticParams() {
 export async function generateMetadata(props: Omit<Props, 'children'>) {
   const {locale} = await props.params;
 
-  const t = await getTranslations({locale, namespace: 'LocaleLayout'});
+  const t = await getTranslations({locale: locale as Locale, namespace: 'LocaleLayout'});
 
   return {
     title: t('title')
@@ -39,15 +39,16 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
 export default async function LocaleLayout({children, params}: Props) {
   // Ensure that the incoming `locale` is valid
   const {locale} = await params;
-  if (!hasLocale(routing.locales, locale)) {
+  const validLocale = locale as Locale;
+  if (!hasLocale(routing.locales, validLocale)) {
     notFound();
   }
 
   // Enable static rendering
-  setRequestLocale(locale);
+  setRequestLocale(validLocale);
 
   return (
-    <html className="h-full" lang={locale}>
+    <html className="h-full" lang={validLocale}>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <RegionProvider>
           <NextIntlClientProvider>
