@@ -30,7 +30,7 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
         </div>
 <div className='max-w-4xl'>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4">
-          {/* {clients.map((client) => (
+          {clients.map((client) => (
               <div
                 key={client.id}
                 className="flex items-center justify-center rounded-lg bg-white p-4"
@@ -44,9 +44,9 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
                 />
               </div>
             ))
-          } */}
+          }
       
-          <div className="flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 border-2 border-transparent hover:bg-white/20 hover:border-white transition-all duration-300 ">
+          {/* <div className="flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 border-2 border-transparent hover:bg-white/20 hover:border-white transition-all duration-300 ">
             <img src="/images/clients/boloni.png" className="h-auto max-h-16 w-auto object-contain" />
             </div>
             <div className="flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 border-2 border-transparent hover:bg-white/20 hover:border-white transition-all duration-300 ">
@@ -72,7 +72,7 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
             </div>
             <div className="flex items-center justify-center rounded-lg bg-white/10 px-4 py-2 border-2 border-transparent hover:bg-white/20 hover:border-white transition-all duration-300 ">
             <img src="/images/clients/hr-logo.png" className="h-auto max-h-16 w-auto object-contain" />
-            </div>
+            </div> */}
             </div>
   </div>
       </div>
