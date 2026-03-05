@@ -28,12 +28,13 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
           </p>
           </div>
         </div>
-<div className='max-w-4xl'>
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4">
+<div className='max-w-full'>
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
+   
           {clients.map((client) => (
               <div
                 key={client.id}
-                className="flex items-center justify-center rounded-lg bg-white p-4"
+                className="flex items-center justify-center rounded-lg bg-white/10 px-2 py-2 border-2 border-transparent hover:bg-white/20 hover:border-white transition-all duration-300"
               >
                 <Image
                   src={client.logo?.url}
@@ -43,6 +44,7 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
                   className="h-auto max-h-16 w-auto object-contain"
                 />
               </div>
+              
             ))
           }
       

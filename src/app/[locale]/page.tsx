@@ -8,7 +8,7 @@ import Connecting from '@/components/home/Connecting';
 import VideoDivider from '@/components/home/VideoDivider';
 import ClientsSection from '@/components/home/ClientsSection';
 import NewsSection from '@/components/home/NewsSection';
-import { getNews } from '@/lib/api';
+import { getNews, getClients } from '@/lib/api';
 import { mockServices } from '@/lib/mockData';
 
 export default async function IndexPage({ params }: { params: Promise<{ locale: Locale }> }) {
@@ -17,15 +17,16 @@ export default async function IndexPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
   
   // Fetch data from Strapi API
-  const [news] = await Promise.all([
-    getNews(locale)
+  const [news, clients] = await Promise.all([
+    getNews(locale),
+    getClients(locale),
   ]);
 
   return (
     <main>
       <HeroSection />
       <ServicesSection services={mockServices} />
-      <ClientsSection clients={[]} />
+      <ClientsSection clients={clients} />
       <Connecting />
       <VideoDivider />
       <NewsSection newsArticles={news} />

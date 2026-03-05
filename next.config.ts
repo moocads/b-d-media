@@ -12,7 +12,19 @@ const config: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'bd-media-cms-3a632067a728.herokuapp.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'bd-media-cms-mooc.s3.ca-central-1.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i0.hdslb.com',
       },
     ],
   },

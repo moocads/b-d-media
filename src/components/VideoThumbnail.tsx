@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Play } from 'lucide-react';
+import Image from 'next/image';
 import VideoModal from './VideoModal';
-import { useRegion } from '@/contexts/RegionContext';
 
 interface VideoThumbnailProps {
   videoId: string;
@@ -25,28 +25,24 @@ export default function VideoThumbnail({
   className = "" 
 }: VideoThumbnailProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { recommendedPlatform, isLoading } = useRegion();
 
-  // 根据推荐平台选择不同的视频平台
-  const isBilibili = recommendedPlatform === 'bilibili' && bilibiliId;
-  
-  // 如果没有提供缩略图URL，根据平台使用默认缩略图
-  const defaultThumbnail = isBilibili 
-    ? `https://i0.hdslb.com/bfs/archive/${bilibiliId}.jpg`
-    : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-  const fallbackThumbnail = isBilibili
-    ? `https://i0.hdslb.com/bfs/archive/${bilibiliId}.jpg`
-    : `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  // 缩略图：优先 CMS thumbnailUrl；否则使用 YouTube 默认缩略图
+  const defaultThumbnail = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const fallbackThumbnail = thumbnailUrl || defaultThumbnail;
+
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
 
   return (
     <>
       <div 
         className={`relative cursor-pointer group overflow-hidden rounded-lg ${className}`}
-        onClick={() => setIsModalOpen(true)}
+        onClick={handleClick}
       >
         {/* Thumbnail */}
         <div className="relative w-full h-full">
-          <img
+          <Image
             src={thumbnailUrl || defaultThumbnail}
             alt={title || "Video thumbnail"}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -57,6 +53,8 @@ export default function VideoThumbnail({
                 target.src = fallbackThumbnail;
               }
             }}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           
           {/* Play button overlay */}
@@ -68,14 +66,13 @@ export default function VideoThumbnail({
         </div>
       </div>
 
-      {/* Video Modal */}
+      {/* Video Modal：根据语言在站内播放新片场或 YouTube */}
       <VideoModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         videoId={videoId}
         bilibiliId={bilibiliId}
         startTime={startTime}
-        isBilibili={!!isBilibili}
       />
     </>
   );

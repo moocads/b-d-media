@@ -1,6 +1,20 @@
 import { strapi } from './strapi';
-import type { Client, NewsArticle, Service, StrapiResponse, StrapiSystemFields, Team, Work } from '../types/strapi';
+import type { Client, NewsArticle, Service, StrapiImage, StrapiResponse, StrapiSystemFields, Team, Work } from '../types/strapi';
 import { Locale } from 'next-intl';
+
+/** Strapi 媒体字段可能是扁平 { url } 或 v4 关系格式 { data: { attributes: { url } } } */
+type StrapiMediaField = StrapiImage | { data?: { attributes?: { url?: string } }; url?: string } | null | undefined;
+
+export function getStrapiMediaUrl(media: StrapiMediaField): string | undefined {
+  if (!media) return undefined;
+  const url =
+    (media as StrapiImage).url ??
+    (media as { data?: { attributes?: { url?: string } } }).data?.attributes?.url;
+  if (!url) return undefined;
+  if (url.startsWith('http')) return url;
+  const base = process.env.NEXT_PUBLIC_CMS_API_URL || 'https://bd-media-cms-3a632067a728.herokuapp.com';
+  return `${base.replace(/\/$/, '')}${url.startsWith('/') ? url : `/${url}`}`;
+}
 
 // Define the structure of Strapi data items
 interface StrapiDataItem<T> {
