@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Play } from 'lucide-react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 import VideoModal from './VideoModal';
 
 interface VideoThumbnailProps {
@@ -25,10 +26,18 @@ export default function VideoThumbnail({
   className = "" 
 }: VideoThumbnailProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const locale = useLocale();
 
-  // 缩略图：优先 CMS thumbnailUrl；否则使用 YouTube 默认缩略图
-  const defaultThumbnail = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-  const fallbackThumbnail = thumbnailUrl || defaultThumbnail;
+  // 中文用 B 站，其他语言用 YouTube
+  const isBilibili = locale.startsWith('zh') && !!bilibiliId;
+
+  // 缩略图：优先 CMS thumbnailUrl；中文且用 B 站时可用 B 站图，否则 YouTube 默认
+  const defaultThumbnail = isBilibili
+    ? `https://i0.hdslb.com/bfs/archive/${bilibiliId}.jpg`
+    : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const fallbackThumbnail = isBilibili
+    ? `https://i0.hdslb.com/bfs/archive/${bilibiliId}.jpg`
+    : `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   const handleClick = () => {
     setIsModalOpen(true);
@@ -66,13 +75,14 @@ export default function VideoThumbnail({
         </div>
       </div>
 
-      {/* Video Modal：根据语言在站内播放新片场或 YouTube */}
+      {/* Video Modal：中文用 B 站，其他语言用 YouTube */}
       <VideoModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         videoId={videoId}
         bilibiliId={bilibiliId}
         startTime={startTime}
+        isBilibili={isBilibili}
       />
     </>
   );

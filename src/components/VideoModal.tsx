@@ -1,31 +1,17 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { useLocale } from 'next-intl';
 
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoId: string;
-  bilibiliId?: string; // 这里存放新片场的嵌入链接或 ID
+  bilibiliId?: string;
   startTime?: number;
+  isBilibili?: boolean;
 }
 
-export default function VideoModal({ isOpen, onClose, videoId, bilibiliId, startTime = 0 }: VideoModalProps) {
-  const locale = useLocale();
-  const isChinese = locale.startsWith('zh');
-
-  // 新片场：如果是中文语言且有 bilibiliId，就优先使用新片场播放器
-  const hasXpc = !!bilibiliId;
-  const useXpc = isChinese && hasXpc;
-
-  // 将 bilibiliId 视为新片场的嵌入链接；如果只存了 ID，则拼一个通用的 player 链接
-  const xpcSrc = bilibiliId
-    ? bilibiliId.startsWith('http')
-      ? bilibiliId
-      : `https://player.xinpianchang.com/?mid=${bilibiliId}`
-    : '';
-
+export default function VideoModal({ isOpen, onClose, videoId, bilibiliId, startTime = 0, isBilibili = false }: VideoModalProps) {
   if (!isOpen) return null;
 
   return (
@@ -48,11 +34,11 @@ export default function VideoModal({ isOpen, onClose, videoId, bilibiliId, start
         
         {/* Video container */}
         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-          {useXpc && xpcSrc ? (
+          {isBilibili && bilibiliId ? (
             <iframe
-              src={xpcSrc}
+              src={`https://player.bilibili.com/player.html?bvid=${bilibiliId}&autoplay=1&high_quality=1`}
               className="absolute top-0 left-0 w-full h-full rounded-lg"
-              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allow="autoplay; fullscreen"
               allowFullScreen
             />
           ) : (
