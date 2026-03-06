@@ -1,17 +1,30 @@
 'use client';
 
-import {useTranslations} from 'next-intl';
-import {useEffect, useState} from 'react';
+import {useLocale, useTranslations} from 'next-intl';
+import {useEffect, useRef, useState, useTransition} from 'react';
 import {usePathname} from 'next/navigation';
 import Link from 'next/link';
+import {Globe} from 'lucide-react';
+import {usePathname as useI18nPathname, useRouter} from '@/i18n/navigation';
+import {routing} from '@/i18n/routing';
+import type {Locale} from 'next-intl';
+import {useParams} from 'next/navigation';
 import LocaleSwitcher from './LocaleSwitcher';
 import NavigationLink from './NavigationLink';
 
 export default function Navigation() {
   const t = useTranslations('Navigation');
+  const tLocale = useTranslations('LocaleSwitcher');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLocaleDropdownOpen, setIsLocaleDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const i18nPathname = useI18nPathname();
+  const router = useRouter();
+  const params = useParams();
+  const locale = useLocale();
+  const localeDropdownRef = useRef<HTMLDivElement>(null);
+  const [isPending, startTransition] = useTransition();
 
   // Check if current page is home page (root path)
   const isHomePage = pathname === '/' || pathname === '/en' || pathname === '/zh-CN' || pathname === '/zh-Hant';
@@ -36,6 +49,18 @@ export default function Navigation() {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  // Close locale dropdown when clicking outside
+  useEffect(() => {
+    if (!isLocaleDropdownOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (localeDropdownRef.current && !localeDropdownRef.current.contains(e.target as Node)) {
+        setIsLocaleDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isLocaleDropdownOpen]);
 
   // Determine background class based on page and scroll state
   const getBackgroundClass = () => {
@@ -64,7 +89,7 @@ export default function Navigation() {
           <NavigationLink href="/contact" className="px-4 hover:opacity-80 transition-all duration-200 bg-white text-black rounded-full py-2 px-4 font-normal">{t('contact')}</NavigationLink>
           <LocaleSwitcher />
         </div>
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center gap-1">
           <button
             onClick={toggleMobileMenu}
             className="text-white p-2 focus:outline-none"
@@ -76,6 +101,48 @@ export default function Navigation() {
               <span className={`block w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
             </div>
           </button>
+          <div className="relative" ref={localeDropdownRef}>
+            <button
+              type="button"
+              onClick={() => setIsLocaleDropdownOpen((v) => !v)}
+              disabled={isPending}
+              className="text-white p-2 focus:outline-none hover:opacity-80 transition-opacity disabled:opacity-60"
+              aria-label={tLocale('label')}
+              aria-expanded={isLocaleDropdownOpen}
+              aria-haspopup="listbox"
+            >
+              <Globe className="w-5 h-5" />
+            </button>
+            {isLocaleDropdownOpen && (
+              <ul
+                className="absolute right-0 top-full mt-1 min-w-[140px] rounded-lg border border-gray-700 bg-black py-1 shadow-lg z-[60]"
+                role="listbox"
+              >
+                {routing.locales.map((cur) => (
+                  <li key={cur} role="option" aria-selected={cur === locale}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        startTransition(() => {
+                          router.replace(
+                            // @ts-expect-error -- pathname/params match current route
+                            {pathname: i18nPathname, params},
+                            {locale: cur as Locale}
+                          );
+                        });
+                        setIsLocaleDropdownOpen(false);
+                      }}
+                      className={`block w-full text-left px-4 py-2.5 text-sm text-white hover:bg-gray-800 transition-colors ${
+                        cur === locale ? 'bg-gray-800 font-medium' : ''
+                      }`}
+                    >
+                      {tLocale('locale', {locale: cur.replaceAll('-', '_')})}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </nav>
       <div className={`md:hidden fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
@@ -124,9 +191,6 @@ export default function Navigation() {
               >
                 {t('contact')}
               </NavigationLink>
-              <div className="py-3 hidden md:block">
-                <LocaleSwitcher />
-              </div>
             </div>
           </div>
         </div>
