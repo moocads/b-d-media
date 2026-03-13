@@ -5,10 +5,10 @@
   },
   "IndexPage": {
     "description": "Ceci est un exemple de base qui démontre l'utilisation de <code>next-intl</code> avec le Next.js App Router. Essayez de changer la langue dans le coin supérieur droit et voyez comment le contenu change.",
-    "title": "B&D Media"
+    "title": "B&D Media - Agence Créative Mondiale"
   },
   "LocaleLayout": {
-    "title": "B&D Media"
+    "title": "B&D Media - Agence Créative Mondiale"
   },
   "LocaleSwitcher": {
     "label": "Changer de langue",
@@ -99,7 +99,7 @@
     "subtitle": "B&D Media Stratégie Internationale Approfondissement Local",
     "ourStory": {
       "title": "Notre Histoire",
-      "description": "Fondée en 2023, nous nous sommes dédiés à fournir des solutions innovantes. Notre parcours a commencé avec une idée simple : rendre la technologie accessible à tous, et a depuis évolué en une plateforme complète pour l'apprentissage et la croissance."
+      "description": "Fondée en 2004, B&D Media est une agence créative mondiale basée à Toronto et Beijing, spécialisée dans la stratégie, la narration et le marketing intégré."
     },
     "mission": {
       "title": "Notre Mission",

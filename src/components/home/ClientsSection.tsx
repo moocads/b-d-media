@@ -34,7 +34,7 @@ export default function ClientsSection({ clients = [] }: ClientsSectionProps) {
           {clients.map((client) => (
               <div
                 key={client.id}
-                className="flex items-center justify-center rounded-lg bg-white/10 px-2 py-2 border-2 border-transparent hover:bg-white/20 hover:border-white transition-all duration-300"
+                className="flex items-center justify-center rounded-lg bg-white/10 px-0 py-0 border-2 border-transparent hover:bg-white/20 hover:border-white transition-all duration-300"
               >
                 <Image
                   src={client.logo?.url}

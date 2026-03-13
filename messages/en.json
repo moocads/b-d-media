@@ -5,17 +5,17 @@
   },
   "IndexPage": {
     "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
-    "title": "B&D Media"
+    "title": "B&D Media - Global Creative Agency"
   },
   "LocaleLayout": {
-    "title": "B&D Media"
+    "title": "B&D Media - Global Creative Agency"
   },
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, en {English} zh_CN {简体中文} zh_Hant {繁體中文} fr {Français} other {Unknown}}"
   },
   "Manifest": {
-    "name": "B&D Media",
+    "name": "B&D Media - Global Creative Agency",
     "LogoLink": "/images/logo-white-en.png"
   },
   "Button": {
@@ -100,7 +100,7 @@
     "subtitle": "B&D Media International Strategy Local Deepening",
     "ourStory": {
       "title": "Our Story",
-      "description": "Founded in 2023, we have been dedicated to providing innovative solutions. Our journey began with a simple idea: to make technology accessible to everyone, and has since evolved into a comprehensive platform for learning and growth."
+      "description": "Founded in 2004, we have been dedicated to providing innovative solutions. Our journey began with a simple idea: to make technology accessible to everyone, and has since evolved into a comprehensive platform for learning and growth."
     },
     "mission": {
       "title": "Our Mission",

@@ -32,7 +32,7 @@ export const mockServices = [
             id: 2,
             name: 'digital-marketing.jpg',
             alternativeText: 'Digital Marketing icon',
-            url: '/images/services/digital-marketing.jpg',
+            url: '/images/services/digital-marketing-en.jpg',
             width: 400,
             height: 300,
             formats: {

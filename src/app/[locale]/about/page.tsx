@@ -49,7 +49,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           loop 
           playsInline
         >
-          <source src="/videos/about-video-bg.mp4" type="video/mp4" />
+          <source src="/videos/about-video-bg-2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         

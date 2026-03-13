@@ -47,7 +47,7 @@ export default function ServicesSection({ services = [] }: ServicesSectionProps)
     {
       id: 2,
       title: 'Digital Marketing',
-      imageUrl: '/images/services/digital-marketing.jpg',
+      imageUrl: '/images/services/digital-marketing-en.png',
       alt: 'Digital Marketing Service'
     },
     {
