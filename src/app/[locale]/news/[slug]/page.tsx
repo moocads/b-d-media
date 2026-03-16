@@ -91,9 +91,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ loc
         )}
 
         {/* Post summary as lead-in */}
-        <div className="text-md font-medium mb-6 text-gray-700">
-          {post.summary}
-        </div>
+
 
         {/* Post content */}
         <div className="prose prose-lg max-w-none">
