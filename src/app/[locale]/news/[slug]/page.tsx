@@ -42,6 +42,19 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ loc
     notFound();
   }
 
+  // Strapi 富文本在某些版本中会返回「blocks」数组，需要手动提取文本
+  const contentValue: any = (post as any).content;
+  const contentText =
+    Array.isArray(contentValue)
+      ? contentValue
+          .map((block: any) =>
+            (block.children || [])
+              .map((child: any) => child.text ?? '')
+              .join('')
+          )
+          .join('\n\n')
+      : (contentValue || '');
+
   // Format the date
   const formattedDate = new Date(post.createdAt).toLocaleDateString(locale, {
     year: 'numeric',
@@ -83,11 +96,10 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ loc
         </div>
 
         {/* Post content */}
-        <div
-          className="prose prose-lg max-w-none">
-          {post.summary && (
-            <div className="text-md font-regular mb-6 text-gray-700">
-              {post.summary}
+        <div className="prose prose-lg max-w-none">
+          {contentText && (
+            <div className="text-md font-light mb-6 text-gray-700 whitespace-pre-line">
+              {contentText}
             </div>
           )}
         </div>
