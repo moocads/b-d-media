@@ -66,16 +66,16 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
                   )}
                   <div className="p-4 ">
                <Link href={`/${locale}/news/${post.slug}`}>
-                    <h2 className="text-[24px] font-bold mb-2 text-black uppercase">{post.title}</h2>
+                    <h2 className="text-[20px] font-bold mb-2 text-black">{post.title}</h2>
                </Link>
-                         <p className="text-sm text-gray-500 mb-2">
+                         <p className="text-sm text-gray-500 mb-2 uppercase">
                       {new Date(post.createdAt).toLocaleDateString(locale, {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
                       })}
                     </p>
-                    <p className="text-gray-600 mb-4 ">{post.summary}</p>
+                    <p className="text-gray-600 mb-4 text-md font-light">{post.summary}</p>
                     <Link
                       href={`/${locale}/news/${post.slug}`}
                       className="font-medium hover:underline px-4 py-2 bg-black text-white flex items-center gap-2 absolute bottom-0 right-0"

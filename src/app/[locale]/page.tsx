@@ -9,7 +9,6 @@ import VideoDivider from '@/components/home/VideoDivider';
 import ClientsSection from '@/components/home/ClientsSection';
 import NewsSection from '@/components/home/NewsSection';
 import { getNews, getClients } from '@/lib/api';
-import { mockServices } from '@/lib/mockData';
 
 export default async function IndexPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
@@ -25,7 +24,7 @@ export default async function IndexPage({ params }: { params: Promise<{ locale: 
   return (
     <main>
       <HeroSection />
-      <ServicesSection services={mockServices} />
+      <ServicesSection />
       <ClientsSection clients={clients} />
       <Connecting />
       <VideoDivider />

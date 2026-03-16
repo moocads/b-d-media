@@ -1,7 +1,25 @@
-import { useTranslations } from 'next-intl';
+'use client';
+
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Service } from '@/types/strapi';
+
+const LOCALE_TO_SUFFIX: Record<string, string> = {
+  en: 'en',
+  'zh-CN': 'cn',
+  'zh-Hant': 'tr-cn',
+  fr: 'fr',
+};
+
+const SERVICES = [
+  { id: 1, titleKey: 'service1' as const },
+  { id: 2, titleKey: 'service2' as const },
+  { id: 3, titleKey: 'service3' as const },
+];
+
+function getServiceImagePath(index: number, localeSuffix: string) {
+  return `/images/services/${String(index).padStart(2, '0')}-${localeSuffix}.webp`;
+}
 
 interface ServiceCardProps {
   title: string;
@@ -11,7 +29,7 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, imageUrl, alt }: ServiceCardProps) {
   return (
-    <div className="overflow-hidden rounded-tr-[30px] bg-white">
+    <div className="overflow-hidden rounded-tr-[30px] bg-white" aria-label={title}>
       <div className="relative h-64 w-full">
         <Image
           src={imageUrl}
@@ -22,51 +40,27 @@ function ServiceCard({ title, imageUrl, alt }: ServiceCardProps) {
         />
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-semibold">{title}</h3>
+        {/* <h3 className="text-xl font-semibold">{title}</h3> */}
       </div>
     </div>
   );
 }
 
-interface ServicesSectionProps {
-  services?: Service[];
-}
-
-export default function ServicesSection({ services = [] }: ServicesSectionProps) {
+export default function ServicesSection() {
   const t = useTranslations('HomePage.services');
   const tButton = useTranslations('Button');
-  
-  // Fallback services if API fails
-  const fallbackServices = [
-    {
-      id: 1,
-      title: 'Brand Strategy',
-      imageUrl: '/images/services/brand-strategy.jpg',
-      alt: 'Brand Strategy Service'
-    },
-    {
-      id: 2,
-      title: 'Digital Marketing',
-      imageUrl: '/images/services/digital-marketing-en.png',
-      alt: 'Digital Marketing Service'
-    },
-    {
-      id: 3,
-      title: 'Production',
-      imageUrl: '/images/services/production.jpg',
-      alt: 'Production Service'
-    }
-  ];
+  const locale = useLocale();
+  const suffix = LOCALE_TO_SUFFIX[locale] ?? 'en';
 
-  // Use API data if available, otherwise use fallback
-  const displayServices = services.length > 0 
-    ? services.map(service => ({
-        id: service.id,
-        title: service.title,
-        imageUrl: service.icon?.url || '/images/placeholder.jpg',
-        alt: service.title
-      }))
-    : fallbackServices;
+  const displayServices = SERVICES.map((s) => {
+    const title = t(s.titleKey);
+    return {
+      id: s.id,
+      title,
+      imageUrl: getServiceImagePath(s.id, suffix),
+      alt: title,
+    };
+  });
 
   return (
     <section className="bg-white py-16">

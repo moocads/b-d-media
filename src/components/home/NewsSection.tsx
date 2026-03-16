@@ -22,8 +22,8 @@ function NewsCard({news}: {news: NewsArticle}) {
         />
       </div>
       <div className="p-4">
-        <h3 className="mb-2 text-lg font-semibold">
-          <Link href={`/news/${news.slug}`} className="hover:text-yellow-600">
+        <h3 className="mb-2 text-md font-medium">
+          <Link href={`/news/${news.slug}`} className="hover:text-gray-400">
             {news.title}
           </Link>
         </h3>
@@ -53,7 +53,7 @@ export default function NewsSection({ newsArticles = [] }: { newsArticles: NewsA
             {t('description')}
           </p>
           <br />
-          <Link href="/contact" className="bg-black rounded-full px-4 py-2 text-white text-sm mt-2">
+          <Link href="/news" className="bg-black rounded-full px-4 py-2 text-white text-sm mt-2">
             {t('readMore')}
           </Link>
           </div>
