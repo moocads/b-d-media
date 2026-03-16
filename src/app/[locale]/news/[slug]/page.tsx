@@ -78,15 +78,19 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ loc
         )}
 
         {/* Post summary as lead-in */}
-        <div className="text-xl font-medium mb-6 text-gray-700">
+        <div className="text-md font-medium mb-6 text-gray-700">
           {post.summary}
         </div>
 
         {/* Post content */}
         <div
-          className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+          className="prose prose-lg max-w-none">
+          {post.summary && (
+            <div className="text-md font-regular mb-6 text-gray-700">
+              {post.summary}
+            </div>
+          )}
+        </div>
       </article>
     </PageLayout>
   );
