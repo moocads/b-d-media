@@ -29,14 +29,16 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, imageUrl, alt }: ServiceCardProps) {
   return (
-    <div className="overflow-hidden rounded-tr-[30px] bg-white" aria-label={title}>
-      <div className="relative h-64 w-full">
+    <div className="rounded-tr-[30px] bg-white" aria-label={title}>
+      <div className="w-full">
         <Image
           src={imageUrl}
           alt={alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
+          className="object-contain rounded-tr-[30px]"
         />
       </div>
       <div className="p-4">
