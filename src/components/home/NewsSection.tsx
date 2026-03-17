@@ -1,14 +1,18 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { NewsArticle } from '@/types/strapi';
 
-function NewsCard({news}: {news: NewsArticle}) {
-  const formattedDate = new Date(news.publishedAt).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
+function NewsCard({ news, locale }: { news: NewsArticle; locale: string }) {
+  // 优先使用 release_date，空的话不显示日期
+  const releaseDate = (news as any).release_date as string | null | undefined;
+  const formattedDate = releaseDate
+    ? new Date(releaseDate).toLocaleDateString(locale, {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      })
+    : null;
 
   return (
     <div className="overflow-hidden rounded-tr-[30px] bg-white">
@@ -27,7 +31,9 @@ function NewsCard({news}: {news: NewsArticle}) {
             {news.title}
           </Link>
         </h3>
-        <p className="text-sm text-gray-500">{formattedDate}</p>
+        {formattedDate && (
+          <p className="text-sm text-gray-500">{formattedDate}</p>
+        )}
       </div>
     </div>
   );
@@ -35,6 +41,7 @@ function NewsCard({news}: {news: NewsArticle}) {
 
 export default function NewsSection({ newsArticles = [] }: { newsArticles: NewsArticle[] }) {
   const t = useTranslations('HomePage.news');
+  const locale = useLocale();
 
   return (
     <section className="bg-white py-16">
@@ -64,6 +71,7 @@ export default function NewsSection({ newsArticles = [] }: { newsArticles: NewsA
             <NewsCard
               key={news.id}
               news={news}
+              locale={locale}
             />
           ))}
         </div>

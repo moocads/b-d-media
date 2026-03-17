@@ -64,6 +64,8 @@ export interface NewsArticle {
   createdAt: string;
   updatedAt: string;
   image: StrapiImage;
+  // 新增：自定义发布日期（可选）
+  release_date?: string | null;
 }
 
 export interface Service {

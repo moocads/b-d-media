@@ -55,12 +55,16 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ loc
           .join('\n\n')
       : (contentValue || '');
 
-  // Format the date
-  const formattedDate = new Date(post.createdAt).toLocaleDateString(locale, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  // Format the date：优先使用 release_date，空则不显示
+  const releaseDate = (post as any).release_date as string | null | undefined;
+  const dateSource = releaseDate || post.createdAt;
+  const formattedDate = dateSource
+    ? new Date(dateSource).toLocaleDateString(locale, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : null;
 
   return (
     <PageLayout title={post.title}>
@@ -76,7 +80,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ loc
         {/* Post header */}
         <header className="mb-8">
           <h1 className="text-4xl text-black font-bold mb-4">{post.title}</h1>
-          <p className="text-gray-500">{formattedDate}</p>
+          {formattedDate && <p className="text-gray-500">{formattedDate}</p>}
         </header>
 
         {/* Featured image */}

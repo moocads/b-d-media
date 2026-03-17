@@ -11,6 +11,7 @@ interface Post {
   summary: string;
   slug: string;
   createdAt: string;
+  release_date?: string | null;
   image?: {
     url: string;
   };
@@ -57,6 +58,14 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => {
               const imageUrl = post.image?.url;
+              const releaseDate = (post as any).release_date as string | null | undefined;
+              const formattedDate = releaseDate
+                ? new Date(releaseDate).toLocaleDateString(locale, {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })
+                : null;
               return (
                 <div key={post.id} className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow relative">
                   {imageUrl ? (
@@ -68,13 +77,11 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: L
                <Link href={`/${locale}/news/${post.slug}`}>
                     <h2 className="text-[20px] font-bold mb-2 text-black">{post.title}</h2>
                </Link>
-                         <p className="text-sm text-gray-500 mb-2 uppercase">
-                      {new Date(post.createdAt).toLocaleDateString(locale, {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </p>
+                         {formattedDate && (
+                           <p className="text-sm text-gray-500 mb-2 uppercase">
+                             {formattedDate}
+                           </p>
+                         )}
                     <p className="text-gray-600 mb-4 text-md font-light">{post.summary}</p>
                     <Link
                       href={`/${locale}/news/${post.slug}`}
