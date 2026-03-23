@@ -116,6 +116,7 @@
     },
     "team": {
       "title": "Notre Équipe",
+      "readMore": "Lire la suite",
       "member1": {
         "name": "John Doe",
         "role": "PDG & Fondateur"

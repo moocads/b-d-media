@@ -14,6 +14,14 @@ interface VideoModalProps {
 export default function VideoModal({ isOpen, onClose, videoId, bilibiliId, startTime = 0, isBilibili = false }: VideoModalProps) {
   if (!isOpen) return null;
 
+  const extractBvid = (value?: string): string | null => {
+    if (!value) return null;
+    const match = value.match(/BV[0-9A-Za-z]{10}/);
+    return match?.[0] ?? null;
+  };
+
+  const bvid = extractBvid(bilibiliId);
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Backdrop */}
@@ -34,9 +42,9 @@ export default function VideoModal({ isOpen, onClose, videoId, bilibiliId, start
         
         {/* Video container */}
         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-          {isBilibili && bilibiliId ? (
+          {isBilibili && bvid ? (
             <iframe
-              src={`https://player.bilibili.com/player.html?bvid=${bilibiliId}&autoplay=1&high_quality=1`}
+              src={`https://player.bilibili.com/player.html?bvid=${bvid}&autoplay=1&high_quality=1`}
               className="absolute top-0 left-0 w-full h-full rounded-lg"
               allow="autoplay; fullscreen"
               allowFullScreen

@@ -1,9 +1,8 @@
 import{ Locale } from 'next-intl';
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import Link from 'next/link';
 import PageLayout from "@/components/PageLayout";
 import VideoThumbnail from "@/components/VideoThumbnail";
-import { getWorks, getStrapiMediaUrl } from '@/lib/api';
+import { getWorks } from '@/lib/api';
 
 export default async function WorksPage({params}: {params: Promise<{locale: Locale}>}) {
   const {locale} = await params;
@@ -58,13 +57,13 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
             <VideoThumbnail
               videoId={work.videoId}
               bilibiliId={work.bilibiliId}
-              thumbnailUrl={getStrapiMediaUrl(work.thumbnail)}
+           
               startTime={work.startTime}
               title={work.title}
               description={work.description}
               className="w-full h-64"
             />
-            <h3 className="text-xl md:text-4xl font-semibold leading-tight tracking-tight text-black fade-in-left mt-4">
+            <h3 className="text-xl md:text-2xl font-semibold leading-tight tracking-tight text-black fade-in-left mt-4">
               {work.title}
             </h3>
           </div>

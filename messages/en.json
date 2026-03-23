@@ -117,6 +117,7 @@
     },
     "team": {
       "title": "Our Team",
+      "readMore": "Read more",
       "member1": {
         "name": "John Doe",
         "role": "CEO & Founder",

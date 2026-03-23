@@ -26,6 +26,10 @@ const config: NextConfig = {
         protocol: 'https',
         hostname: 'i0.hdslb.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'i1.hdslb.com',
+      },
     ],
   },
 };

@@ -1,7 +1,8 @@
 import {Locale} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import PageLayout from '@/components/PageLayout';
-import { getTeams } from '@/lib/api';
+import TeamGrid from '@/components/about/TeamGrid';
+import { getStrapiMediaUrl, getTeams } from '@/lib/api';
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const {locale} = await params;
@@ -12,6 +13,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const teams = await getTeams(locale);
 
   const t = await getTranslations('AboutPage');
+
+  const teamCards = teams.map((team) => ({
+    id: team.id,
+    name: team.name,
+    role: team.role,
+    description: team.description,
+    imageUrl: getStrapiMediaUrl(team.image as any) ?? undefined,
+  }));
 
   return (
     <>
@@ -83,22 +92,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <div className="container mx-auto my-[100px] relative z-10">
-    
-            <div className="grid grid-cols-3 gap-16"> 
-              {teams.map((team) => (
-                <div key={team.id} className="col-span-1">   
-                  <div className="overflow-hidden">
-                    <img src={team.image?.url} alt={team.name} className="w-full h-full object-cover hover:scale-105 transition-all duration-300" />
-                  </div>
-                  <h3 className="text-2xl font-semibold leading-tight tracking-tight text-black mt-4 md:text-5xl fade-in-left">{team.name}</h3>
-                  <p className="mb-4 font-light text-black">{team.role}</p>
-                  <br />
-                  <p className="mb-4 font-light text-black">{team.description}</p>
-                </div>
-              ))}
-            </div>
-        
+      <div className="container relative z-10 mx-auto my-[100px]">
+        <TeamGrid teams={teamCards} />
       </div>
     </>
   );
