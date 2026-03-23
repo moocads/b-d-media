@@ -131,7 +131,7 @@ function mergeWorkVideoFromEn(target: Work, en: Work | undefined): Work {
  */
 export async function getWorks(locale: Locale, limit = 30): Promise<Work[]> {
   const pagination = { page: 1, pageSize: limit };
-  const base = { populate: ['thumbnail'] as const, pagination };
+  const base = { populate: ['thumbnail'] as string[], pagination };
 
   try {
     if (locale !== 'fr') {
