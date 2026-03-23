@@ -97,21 +97,75 @@ export async function getTeams(locale: Locale, limit = 30): Promise<Team[]> {
   }
 }
 
+function workSlug(w: Work): string | null {
+  const s = (w as Work & { slug?: string }).slug ?? (w as unknown as { attributes?: { slug?: string } }).attributes?.slug;
+  return typeof s === 'string' && s.trim() ? s.trim() : null;
+}
+
+function pickVideoFields(from: Work): Pick<Work, 'videoId' | 'bilibiliId' | 'startTime'> {
+  return {
+    videoId: (from.videoId ?? '').trim(),
+    bilibiliId: (from.bilibiliId ?? '').trim(),
+    startTime: typeof from.startTime === 'number' ? from.startTime : 0,
+  };
+}
+
+function mergeWorkVideoFromEn(target: Work, en: Work | undefined): Work {
+  if (!en) return target;
+  const t = pickVideoFields(target);
+  const e = pickVideoFields(en);
+  const videoId = t.videoId || e.videoId;
+  const bilibiliId = t.bilibiliId || e.bilibiliId;
+  const startTime = t.videoId ? target.startTime : e.videoId ? en.startTime : target.startTime;
+  return {
+    ...target,
+    videoId,
+    bilibiliId,
+    startTime,
+  };
+}
+
 /**
  * Fetch works from Strapi CMS
+ * 法语：与英文共用 YouTube / B 站字段——若法语条目未填 videoId，会按 slug（或顺序）合并英文条目上的视频信息。
  */
 export async function getWorks(locale: Locale, limit = 30): Promise<Work[]> {
+  const pagination = { page: 1, pageSize: limit };
+  const base = { populate: ['thumbnail'] as const, pagination };
+
   try {
-    const response = await strapi.find<Work>('works', {
-      populate: ['thumbnail'],
-      pagination: {
-        page: 1,
-        pageSize: limit
-      },
-      locale: locale as any,
+    if (locale !== 'fr') {
+      const response = await strapi.find<Work>('works', {
+        ...base,
+        locale: locale as any,
+      });
+      return response.data;
+    }
+
+    const [frRes, enRes] = await Promise.all([
+      strapi.find<Work>('works', { ...base, locale: 'fr' as any }),
+      strapi.find<Work>('works', { ...base, locale: 'en' as any }),
+    ]);
+
+    let frList = frRes.data ?? [];
+    const enList = enRes.data ?? [];
+
+    if (frList.length === 0 && enList.length > 0) {
+      frList = enList;
+    }
+
+    const enBySlug = new Map<string, Work>();
+    enList.forEach((w) => {
+      const slug = workSlug(w);
+      if (slug) enBySlug.set(slug, w);
     });
-    
-    return response.data;
+
+    return frList.map((w, index) => {
+      const slug = workSlug(w);
+      const en =
+        (slug && enBySlug.get(slug)) ?? enList[index] ?? undefined;
+      return mergeWorkVideoFromEn(w, en);
+    });
   } catch (error) {
     console.error('Error fetching works:', error);
     return [];

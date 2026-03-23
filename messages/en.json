@@ -55,14 +55,14 @@
   },
   "HomePage": { 
     "hero": {
-      "title": "Diverse Brand Communication Solutions",
+      "title": "Multilingual Brand Communication Solutions",
       "subtitle": "We help brands connect with their audience through strategic communication",
       "cta": "Get Started"
     },
      "services": {
       "title": "Empowering<br />Brand Growth",
       "subtitle": "Our Services",
-      "description": "Whether it’s breaking through for a new brand or revitalizing an established one, we tailor communication strategies from brand positioning to execution. Our end-to-end solutions ensure that every investment delivers tangible and measurable impact.",
+      "description": "Whether for emerging brands seeking to break through or established brands aiming to refresh their image, we craft customized communication pathways. From brand strategy to on-the-ground execution, we provide comprehensive communication solutions, ensuring every investment generates tangible and perceptible brand value.",
       "service1": "Brand Strategy", 
       "service2": "Digital Marketing",
       "service3": "Project Implementation"
@@ -70,11 +70,11 @@
     "clients": {
       "title": "Partnering with Exceptional Brands",
       "subtitle": "Our Clients",
-      "description": "We are not just service providers—we are partners in your brand’s journey. From startups to established global brands, we are committed to delivering excellence in everything we do."
+      "description": "We are more than just service providers; we are long-term partners on your brand's growth journey. From startup to maturity, from local to global, we accompany every brand's transformative journey with professionalism and passion."
     },
     "connecting": {
-      "title": "Crossing Cultures, Connecting Globally",
-      "description": "B&D Media was founded in Toronto, Canada, and has since expanded to Beijing, China. With a dual-hub strategy spanning both North America and China, we blend diverse cultural perspectives to create global-minded communication strategies. Through strategic consulting, creative storytelling, and digital technology, we help brands break through geographical boundaries and engage with audiences worldwide."
+      "title": "Bridging Cultures, Connecting Globally",
+      "description": "Founded in Toronto, Canada, and developed in Beijing, B&D Media operates with a dual-hub strategy spanning East and West. We deeply integrate multicultural perspectives to craft communication strategies with global resonance. Through the three-dimensional empowerment of strategic consulting, creative storytelling, and digital technology, we help brands transcend geographical boundaries and achieve precise dialogues on the global stage."
     },
     "industries": {
       "title": "Industries We Serve",
@@ -89,31 +89,31 @@
       ]
     },
     "news": {
-      "title": "Global Perspective, Cutting-Edge Insights",
-      "subtitle": "Latest News",
-      "description": "We stay ahead of the curve by tracking global brand communication trends and sharing the latest case studies and industry insights. Our goal is to provide brands with forward-thinking strategies and practical guidance.",
+      "title": "Spotting Trends<br />Staying Ahead of<br /> the Curve",
+      "subtitle": "News",
+      "description": "In a rapidly evolving communication landscape, we consistently stay at the forefront of the industry. From international trends to local practices, B&D Media continuously outputs innovative insights and practical results, providing brands with forward-thinking solutions.",
       "readMore": "Read More"
     }
   },
   "AboutPage": {
-    "title": "About Us",
-    "subtitle": "B&D Media International Strategy Local Deepening",
+    "title": "Make Communication More Than Just Communication",
+    "subtitle": "B&D Media: Global Strategy, Local Expertise",
     "ourStory": {
       "title": "Our Story",
-      "description": "Founded in 2004, we have been dedicated to providing innovative solutions. Our journey began with a simple idea: to make technology accessible to everyone, and has since evolved into a comprehensive platform for learning and growth."
+      "description": "Founded in Toronto, Canada in 2004, B&D Media officially entered the Chinese market in 2018, establishing a localized team in Beijing. Operating under the core principle of \"Message Matters,\" we integrate cutting-edge technology with innovative strategies to create truly effective communication solutions for brands."
     },
     "mission": {
-      "title": "Our Mission",
-      "description": "We strive to empower individuals and organizations through technology education. Our team is committed to delivering excellence in everything we do."
+      "title": "Our Philosophy",
+      "description": "In an era of information overload, mere exposure is no longer enough. We believe that only content that precisely resonates with consumer emotions can spark genuine connection and create lasting brand impact. Therefore, we focus not only on the breadth of communication but also on the depth of content – ensuring every message accurately reaches its target audience, delivering measurable business value."
     },
     "advantage": {
-      "title": "Our Advantage",
-      "advantage1_title": "International Perspective, Local Execution",
-      "advantage1_description": "Based on the North American marketing methodology, combined with the characteristics of the Chinese market, providing customized communication strategies.",
-      "advantage2_title": "Data-driven, Precise Insights",
-      "advantage2_description": "Using advanced data analysis tools to understand consumer behavior and accurately target the target audience.",
-      "advantage3_title": "Creative First, Technology Second",
-      "advantage3_description": "Combining advanced technology with creative strategies to create truly impactful content."
+      "title": "Our Advantages",
+      "advantage1_title": "International Vision, Local ",
+      "advantage1_description": "Execution: Combining North American theories with the nuances of the Chinese market to provide customized communication strategies.",
+      "advantage2_title": "Integrated Marketing ",
+      "advantage2_description": "Communications: Building comprehensive brand visibility across channels, from social media to offline events.",
+      "advantage3_title": "Data-Driven Content ",
+      "advantage3_description": "Optimization: Continuously improving communication ROI based on in-depth user behavior analysis."
     },
     "team": {
       "title": "Our Team",
@@ -145,10 +145,11 @@
     "backToNews": "Back to News"
   },
   "WorksPage": {
-    "title": "B&D Media Case",
-    "subtitle": "Storytelling, Data-driven Communication",
-    "description_01": "We partner with leading brands from technology, finance, fast-moving consumer goods, luxury goods, and healthcare industries to help them break through cultural boundaries and create meaningful communication experiences. From strategic planning to creative execution, each case reflects our commitment to the \"information-effective\" concept.",
-    "description_02": "Whether it's international brand localization or domestic brand globalization, we leverage our cross-industry experience, multicultural perspective, and data-driven approach to deliver measurable business value to our partners."
+    "title": "B&D Media Case Studies",
+    "subtitle": "Reshaping Brand Expression Through Story, Driving Innovation with Data.",
+    "description_01": "We partner with leading brands across technology, finance, FMCG, luxury, healthcare, and more, helping them transcend cultural boundaries to create deeply resonant communication experiences. From strategic planning to creative execution, every case study embodies B&D Media's commitment to the \"Message Matters\" philosophy.",
+    "description_02": "Whether it's the localisation of international brands or the global expansion of local brands, we leverage our extensive cross-industry experience, multicultural perspectives, and data-driven mindset to consistently deliver measurable business value for partners across diverse sectors.",
+    "workTitleBySlug": {}
   },
   "WorksDetail": {
     "backToWorks": "Back to Works"
@@ -186,8 +187,8 @@
   },
   "Footer": {
     "title": "Footer",
-    "description": "Founded in 2004, B&D Media is a global creative agency based in Toronto and Beijing, specializing in strategy, storytelling, and integrated marketing.",
-    "copyright": "© 2025 B&D Media. All rights reserved.",
+    "description": "Founded in 2004, B&D Media is a creative agency specializing in influential brand communication. We combine strategy, narrative, and technology to help brands connect with audiences through video production, digital content, and integrated marketing.",
+    "copyright": "© 2026 B&D Media. All rights reserved.",
     "footerLogoLink": "/images/logo-white-en.png",
     "links": {
       "title":"Links",

@@ -1,8 +1,10 @@
 import{ Locale } from 'next-intl';
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import PageLayout from "@/components/PageLayout";
 import VideoThumbnail from "@/components/VideoThumbnail";
 import { getWorks } from '@/lib/api';
+import { getBilibiliCoverUrl } from '@/lib/bilibili';
+import { extractBvid } from '@/lib/bilibili-shared';
 
 export default async function WorksPage({params}: {params: Promise<{locale: Locale}>}) {
   const {locale} = await params;
@@ -10,6 +12,38 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
   const works = await getWorks(locale);
   
   const t = await getTranslations('WorksPage');
+  const messages = await getMessages();
+  const workTitleBySlug =
+    typeof (messages as { WorksPage?: { workTitleBySlug?: unknown } }).WorksPage?.workTitleBySlug ===
+    'object'
+      ? ((messages as { WorksPage: { workTitleBySlug: Record<string, string> } }).WorksPage
+          .workTitleBySlug ?? {})
+      : {};
+
+  const displayTitle = (work: (typeof works)[number]) => {
+    const slug = (work as { slug?: string }).slug;
+    if (locale === 'fr' && slug && workTitleBySlug[slug]) return workTitleBySlug[slug];
+    return work.title;
+  };
+
+  const isZh = locale.startsWith('zh');
+  const biliCoverCache = new Map<string, string | null>();
+  const resolveBiliCover = async (bvid: string) => {
+    if (biliCoverCache.has(bvid)) return biliCoverCache.get(bvid) ?? undefined;
+    const pic = await getBilibiliCoverUrl(bvid);
+    biliCoverCache.set(bvid, pic);
+    return pic ?? undefined;
+  };
+
+  const worksWithBiliCover = await Promise.all(
+    works.map(async (work) => {
+      if (!isZh) return { work, bilibiliCoverUrl: undefined as string | undefined };
+      const bvid = extractBvid(work.bilibiliId);
+      if (!bvid) return { work, bilibiliCoverUrl: undefined };
+      const pic = await resolveBiliCover(bvid);
+      return { work, bilibiliCoverUrl: pic };
+    })
+  );
   
 
   return (
@@ -22,7 +56,7 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
  
           <h4 className="text-xl text-black font-normal mt-[20px] fade-in-left-delayed">{t('subtitle')}</h4>
                     <br />
-                    <br />
+        
           <p className="text-black font-light fade-in-up">{t('description_01')}</p>
           <br />
           <p className="text-black font-light fade-in-up">{t('description_02')}</p>
@@ -52,19 +86,19 @@ export default async function WorksPage({params}: {params: Promise<{locale: Loca
         <div className="mt-20 border-t border-black-200"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-20">
-          {works.map((work) => (
+          {worksWithBiliCover.map(({ work, bilibiliCoverUrl }) => (
             <div key={work.id} className="col-span-1">
             <VideoThumbnail
               videoId={work.videoId}
               bilibiliId={work.bilibiliId}
-           
+              thumbnailUrl={bilibiliCoverUrl}
               startTime={work.startTime}
-              title={work.title}
+              title={displayTitle(work)}
               description={work.description}
               className="w-full h-64"
             />
             <h3 className="text-xl md:text-2xl font-semibold leading-tight tracking-tight text-black fade-in-left mt-4">
-              {work.title}
+              {displayTitle(work)}
             </h3>
           </div>
           ))}

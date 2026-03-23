@@ -30,6 +30,10 @@ const config: NextConfig = {
         protocol: 'https',
         hostname: 'i1.hdslb.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'i2.hdslb.com',
+      },
     ],
   },
 };

@@ -97,4 +97,6 @@ export interface Work {
   startTime: number;
   createdAt: string;
   updatedAt: string;
+  /** 与英文版条目对应时用于合并 videoId（Strapi i18n 建议在每条 work 上填相同 slug） */
+  slug?: string;
 }
