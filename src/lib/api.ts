@@ -97,6 +97,7 @@ export async function getTeams(locale: Locale, limit = 30): Promise<Team[]> {
   }
 }
 
+
 function workSlug(w: Work): string | null {
   const s = (w as Work & { slug?: string }).slug ?? (w as unknown as { attributes?: { slug?: string } }).attributes?.slug;
   return typeof s === 'string' && s.trim() ? s.trim() : null;
@@ -162,8 +163,8 @@ export async function getWorks(locale: Locale, limit = 30): Promise<Work[]> {
 
     return frList.map((w, index) => {
       const slug = workSlug(w);
-      const en =
-        (slug && enBySlug.get(slug)) ?? enList[index] ?? undefined;
+      const fromSlug = slug ? enBySlug.get(slug) : undefined;
+      const en = fromSlug ?? enList[index];
       return mergeWorkVideoFromEn(w, en);
     });
   } catch (error) {
