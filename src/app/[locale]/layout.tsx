@@ -84,6 +84,8 @@ export default async function LocaleLayout({children, params}: Props) {
             })
           }}
         />
+
+        <meta name="baidu-site-verification" content="codeva-ym7kmYeduM" />
       </head>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <RegionProvider>
