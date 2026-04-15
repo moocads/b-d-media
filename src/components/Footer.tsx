@@ -42,6 +42,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+        <p className="text-white text-sm text-center pt-10">© {new Date().getFullYear()} {t("copyright")}</p>
       </div>
     </section>
   );
