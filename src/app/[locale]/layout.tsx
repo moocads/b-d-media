@@ -49,6 +49,42 @@ export default async function LocaleLayout({children, params}: Props) {
 
   return (
     <html className="h-full" lang={validLocale}>
+       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "B&D Media",
+              "alternateName": "B&D Media Global Creative Agency",
+              "url": "https://b-d-media.com/en",
+              "logo": "https://b-d-media.com/en/logo.png",
+              "description": "B&D Media is an independent global creative agency founded in Toronto and developed in Beijing, specializing in strategic consulting, creative storytelling, and digital technology for brand growth.",
+              "foundingDate": "2004",
+              "foundingLocation": "Toronto, Canada",
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Toronto",
+                  "addressCountry": "CA"
+                },
+                {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Beijing",
+                  "addressCountry": "CN"
+                }
+              ],
+              "areaServed": ["North America", "Asia", "Global"],
+              "brand": {
+                "@type": "Brand",
+                "name": "B&D Media",
+                "url": "https://b-d-media.com/en"
+              }
+            })
+          }}
+        />
+      </head>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <RegionProvider>
           <NextIntlClientProvider>
